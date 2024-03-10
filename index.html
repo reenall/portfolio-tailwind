@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Document</title>
+
+    <script>
+      // biar pas direfresh, status dark modenya tetep sesuai pilihan dan ga kereset (dokumentasi dark mode)
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="absolute z-50 flex top-0 items-center w-full bg-transparent py-8 transition-all duration-500">
+      <div class="container">
+        <div class="relative flex items-center">
+          <div class="px-4">
+            <a href="#home" class="text-3xl text-primaryIconColor font-medium">Ree</a>
+          </div>
+
+          <div class="absolute right-0 flex items-center px-4 lg:hidden">
+            <button name="hamburger" id="hamburger" type="button">
+              <span class="hamburger-line transition duration-500 origin-top-right"></span>
+              <span class="hamburger-line transition duration-500"></span>
+              <span class="hamburger-line transition duration-500 origin-bottom-right"></span>
+            </button>
+          </div>
+
+          <nav id="nav-menu" class="hidden absolute top-full right-0 bg-white dark:border-black border rounded-xl shadow-lg max-w-[250px] w-full py-3 lg:block lg:static lg:max-w-full lg:bg-transparent lg:border-none lg:shadow-none">
+            <ul class="block lg:flex lg:justify-end">
+              <li class="group py-3 lg:py-0">
+                <a href="#home" class="nav-list-item">Home</a>
+              </li>
+              <li class="group py-3 lg:py-0">
+                <a href="#skills" class="nav-list-item">Skills</a>
+              </li>
+              <li class="group py-3 lg:py-0">
+                <a href="#portfolio" class="nav-list-item">Portfolio</a>
+              </li>
+              <li class="group py-3 lg:py-0">
+                <a href="#education" class="nav-list-item">Education</a>
+              </li>
+              <li class="group py-3 lg:py-0">
+                <a href="#blog" class="nav-list-item">Blog</a>
+              </li>
+              <li class="group py-3 lg:py-0">
+                <a href="#contact" class="nav-list-item">Contact</a>
+              </li>
+              <!-- dark mode -->
+              <li class="flex items-center justify-end lg:justify-center border-l-2 pl-4">
+                <div class="flex">
+                  <div class="dark-toggle relative flex items-center w-14 h-7 mx-3 rounded-full bg-primary cursor-pointer">
+                    <div class="circle-toggle absolute z-[999] w-6 h-6 ml-1 rounded-full bg-bgSecondary transition duration-500 ease-in-out"></div>
+
+                    <div class="flex w-full">
+                      <div class="flex w-1/2 justify-center">
+                        <div class="w-[17px] pl-[3px]">
+                          <svg
+                            width="100%"
+                            heigh="100%"
+                            version="1.0"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 64 64"
+                            enable-background="new 0 0 64 64"
+                            xml:space="preserve"
+                            fill="#000000"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <g>
+                                <circle fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" cx="32.003" cy="32.005" r="16.001"></circle>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M12.001,31.997c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4 s1.789,4,4,4h4C10.212,35.997,12.001,34.208,12.001,31.997z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M12.204,46.139l-2.832,2.833c-1.563,1.562-1.563,4.094,0,5.656 c1.562,1.562,4.094,1.562,5.657,0l2.833-2.832c1.562-1.562,1.562-4.095,0-5.657C16.298,44.576,13.767,44.576,12.204,46.139z"
+                                ></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#231F20" d="M32.003,51.999c-2.211,0-4,1.789-4,4V60c0,2.211,1.789,4,4,4 s4-1.789,4-4l-0.004-4.001C36.003,53.788,34.21,51.999,32.003,51.999z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M51.798,46.143c-1.559-1.566-4.091-1.566-5.653-0.004 s-1.562,4.095,0,5.657l2.829,2.828c1.562,1.57,4.094,1.562,5.656,0s1.566-4.09,0-5.656L51.798,46.143z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M60.006,27.997l-4.009,0.008 c-2.203-0.008-3.992,1.781-3.992,3.992c-0.008,2.211,1.789,4,3.992,4h4.001c2.219,0.008,4-1.789,4-4 C64.002,29.79,62.217,27.997,60.006,27.997z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M51.798,17.859l2.828-2.829c1.574-1.566,1.562-4.094,0-5.657 c-1.559-1.567-4.09-1.567-5.652-0.004l-2.829,2.836c-1.562,1.555-1.562,4.086,0,5.649C47.699,19.426,50.239,19.418,51.798,17.859z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M32.003,11.995c2.207,0.016,4-1.789,4-3.992v-4 c0-2.219-1.789-4-4-4c-2.211-0.008-4,1.781-4,3.993l0.008,4.008C28.003,10.206,29.792,11.995,32.003,11.995z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  fill="#231F20"
+                                  d="M12.212,17.855c1.555,1.562,4.079,1.562,5.646-0.004 c1.574-1.551,1.566-4.09,0.008-5.649l-2.829-2.828c-1.57-1.571-4.094-1.559-5.657,0c-1.575,1.559-1.575,4.09-0.012,5.653 L12.212,17.855z"
+                                ></path>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="flex w-1/2 justify-center">
+                        <div class="w-[13px] -rotate-[30deg]">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="full" height="full" viewBox="0 0 24 24">
+                            <path
+                              fill="#fff"
+                              d="M12 10.999c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm8.001.001c.958.293 1.707 1.042 2 2.001.291-.959 1.042-1.709 1.999-2.001-.957-.292-1.707-1.042-2-2-.293.958-1.042 1.708-1.999 2zm-1-9c-.437 1.437-1.563 2.562-2.998 3.001 1.438.44 2.561 1.564 3.001 3.002.437-1.438 1.563-2.563 2.996-3.002-1.433-.437-2.559-1.564-2.999-3.001zm-7.001 22c-6.617 0-12-5.383-12-12s5.383-12 12-12c1.894 0 3.63.497 5.37 1.179-2.948.504-9.37 3.266-9.37 10.821 0 7.454 5.917 10.208 9.37 10.821-1.5.846-3.476 1.179-5.37 1.179z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- END Header -->
+
+    <!-- Hero -->
+    <section id="home" class="pt-36 lg:pt-44 lg:pb-16 xl:pt-52 bg-bgPrimary dark:bg-slate-900">
+      <div class="container">
+        <div class="flex flex-wrap lg:flex-nowrap">
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h3 class="text-base text-secondary dark:text-darkSecondary md:text-lg xl:text-xl" style="word-spacing: 5px">Hello, I'm</h3>
+            <h1 class="text-primary dark:text-darkPrimary text-4xl font-semibold my-1 xl:text-5xl">Muhammad <span class="text-primaryIconColor">Renaldi</span></h1>
+            <h3 class="text-secondary dark:text-darkSecondary mb-9 lg:text-xl">Front-end & Back-end Programmer</h3>
+            <p class="mb-8 text-secondary dark:text-darkSecondary leading-relaxed">I'm a graduate of Informatics Engineering from Darma Persada University</p>
+
+            <a href="#contact" class="btn px-8 py-3 rounded-full dark:text-black">Contact me</a>
+          </div>
+
+          <div class="w-full mt-14 mx-4 relative overflow-hidden lg:w-1/2 lg:mt-0 lg:right-0 flex lg:justify-end dark:brightness-[85%]">
+            <img src="./public/img/avatar1.png" alt="Renaldi" class="relative z-20 mx-auto max-w-[75%] lg:mx-10 xl:max-w-[70%]" />
+            <span class="absolute z-10 -bottom-32 left-[45%] -translate-x-1/2 rotate-[-170deg] md:scale-[1.3] lg:scale-[1.2] lg:left-[50%] xl:scale-[1.3]">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#e5e7eb"
+                  d="M24.6,-35.9C33.2,-27.6,42.5,-22.2,51.7,-12.4C60.9,-2.7,70,11.5,70.5,26.9C71,42.2,62.9,58.8,49.7,64C36.5,69.2,18.3,63.1,4.7,56.7C-8.9,50.2,-17.8,43.4,-32,38.6C-46.3,33.7,-66,30.8,-76.8,19.7C-87.7,8.6,-89.9,-10.7,-82.5,-24.8C-75.2,-39,-58.4,-48.1,-43,-54.3C-27.7,-60.4,-13.9,-63.6,-2.9,-59.6C8,-55.5,15.9,-44.2,24.6,-35.9Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Hero -->
+
+    <!-- Skills -->
+    <section id="skills" class="py-36 bg-bgSecondary dark:bg-bgDarkSecondary">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="first-title">Skills</h4>
+            <h2 class="second-title">Programing Skills</h2>
+            <p class="text-secondary dark:text-darkSecondary">Beberapa framework web development yang saya gunakan</p>
+          </div>
+        </div>
+
+        <div class="w-full px-4 pt-10">
+          <div class="flex flex-wrap items-center justify-center">
+            <div class="w-full p-4 lg:w-1/3">
+              <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
+                <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g id="5151e0c8492e5103c096af88a51e7e7e">
+                        <path
+                          display="inline"
+                          d="M218.195,257.521c0,64.719,4.624,119.1-27.309,151.283c-17.961,18.105-46.301,28.772-81.17,28.772 c-57.192,0-88.947-27.862-109.215-66.416c19.512-12.459,39.452-24.502,59.775-36.154c8.292,23.188,36.291,49.258,67.888,33.21 c20.027-10.18,17.715-41.04,17.715-74.537c0-69.549,0-149.78,0-212.528c-0.063-1.044-0.125-2.087,0.732-2.214 c23.866,0,47.728,0,71.585,0C218.195,134.832,218.195,198.069,218.195,257.521z M399.727,215.462 c-18.247-7.814-40.928-17.058-46.488-33.952c-6.233-18.934,4.396-34.533,16.231-39.841c26.023-11.688,57.038,7.556,63.463,27.301 c19.583-11.657,39.103-23.384,56.826-36.896c-20.826-34.584-51.354-59.342-107.003-57.561 c-30.64,0.979-53.657,10.652-70.841,25.088c-16.771,14.085-29.721,33.854-31.737,61.989 c-6.025,84.212,56.988,105.708,110.695,129.137c16.93,7.385,35.751,14.842,43.54,29.517c16.061,30.282-12.389,50.26-36.898,52.397 c-39.336,3.427-65.858-19.587-81.175-43.54c-19.133,11.86-39.938,22.045-58.298,34.683c25.537,44.908,67.409,73.98,132.831,73.793 c66.74-0.188,116.219-32.366,120.281-92.977C516.677,262.216,454.956,239.105,399.727,215.462z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                  <!-- <img src="./public/img/logo-js.png" alt="PHP" class="w-12 mx-auto"> -->
+                </div>
+                <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">JavaScript</h3>
+                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+              </div>
+            </div>
+            <div class="w-full p-4 lg:w-1/3">
+              <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
+                <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
+                  <svg width="256px" height="256px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <circle cx="16" cy="16" r="14"></circle>
+                      <path
+                        d="M14.4392 10H16.1192L15.6444 12.5242H17.154C17.9819 12.5419 18.5986 12.7269 19.0045 13.0793C19.4184 13.4316 19.5402 14.1014 19.3698 15.0881L18.5541 19.4889H16.8497L17.6288 15.2863C17.7099 14.8457 17.6856 14.533 17.5558 14.348C17.426 14.163 17.146 14.0705 16.7158 14.0705L15.3644 14.0573L14.3661 19.4889H12.6861L14.4392 10Z"
+                        fill="white"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.74092 12.5243H10.0036C10.9612 12.533 11.6552 12.8327 12.0854 13.4229C12.5156 14.0132 12.6576 14.8193 12.5115 15.8414C12.4548 16.3085 12.3289 16.7665 12.1341 17.2159C11.9474 17.6652 11.6878 18.0704 11.355 18.4317C10.9491 18.8898 10.5149 19.1805 10.0523 19.304C9.58969 19.4274 9.11076 19.489 8.61575 19.489H7.15484L6.69222 22H5L6.74092 12.5243ZM7.43485 17.9956L8.16287 14.0441H8.40879C8.49815 14.0441 8.5914 14.0396 8.6888 14.0309C9.33817 14.0221 9.87774 14.0882 10.308 14.2291C10.7462 14.37 10.8923 14.9031 10.7462 15.8282C10.5678 16.9296 10.2186 17.5727 9.69926 17.7577C9.1799 17.934 8.53053 18.0176 7.75138 18.0088H7.58094C7.53224 18.0088 7.48355 18.0043 7.43485 17.9956Z"
+                        fill="white"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M24.4365 12.5243H21.1738L19.4329 22H21.1251L21.5878 19.489H23.0487C23.5437 19.489 24.0226 19.4274 24.4852 19.304C24.9479 19.1805 25.382 18.8898 25.7879 18.4317C26.1207 18.0704 26.3803 17.6652 26.567 17.2159C26.7618 16.7665 26.8877 16.3085 26.9444 15.8414C27.0905 14.8193 26.9486 14.0132 26.5183 13.4229C26.0881 12.8327 25.3942 12.533 24.4365 12.5243ZM22.5958 14.0441L21.8678 17.9956C21.9165 18.0043 21.9652 18.0088 22.0139 18.0088H22.1843C22.9635 18.0176 23.6128 17.934 24.1322 17.7577C24.6515 17.5727 25.0007 16.9296 25.1792 15.8282C25.3253 14.9031 25.1792 14.37 24.7409 14.2291C24.3107 14.0882 23.7711 14.0221 23.1217 14.0309C23.0243 14.0396 22.9311 14.0441 22.8417 14.0441H22.5958Z"
+                        fill="white"
+                      ></path>
+                    </g>
+                  </svg>
+                  <!-- <img src="./public/img/logo-php.png" alt="PHP" class="w-12 mx-auto"> -->
+                </div>
+                <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">PHP</h3>
+                <p class="text-secondary dark:text-darkSecondary" style="word-spacing: 5px"></p>
+                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+              </div>
+            </div>
+            <div class="w-full p-4 lg:w-1/3">
+              <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
+                <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g id="c133de6af664cd4f011a55de6b001a2b">
+                        <path
+                          display="inline"
+                          d="M204.064,46.682v22.018h-56.302V0.501h56.302v24.13h-32.172v22.051H204.064z M261.941,24.631h22.492 V0.501h-56.308c0,0,0,12.112,0,24.13c7.533,7.533,11.461,11.139,22.356,22.034c-6.369,0-22.356,0.022-22.356,0.021v22.014h56.308 V46.682L261.941,24.631z M341.746,24.631h22.49V0.501H307.93c0,0,0,12.112,0,24.13c7.531,7.533,11.461,11.139,22.355,22.034 c-6.365,0-22.355,0.022-22.355,0.021v22.014h56.307V46.682L341.746,24.631z M438.395,101.112l-34.203,370.486l-148.193,39.9 l-148.196-39.9L73.605,101.112H438.395z M369.477,176.444H255.865h-115.62l5.529,44.739h110.091h6.184l-6.184,2.574 l-106.067,44.177l3.518,43.73l102.549,0.333l54.963,0.175l-3.521,58.311l-51.442,14.484v-0.046l-0.422,0.116l-49.684-12.542 l-3.015-36.195h-0.164h-46.085h-0.162l6.032,69.876l93.5,27.649v-0.05l0.168,0.05l93-27.146L361.1,267.935H255.865h-0.26 l0.26-0.112l109.086-46.639L369.477,176.444z"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                  <!-- <img src="./public/img/logo-css.png" alt="PHP" class="w-12 mx-auto"> -->
+                </div>
+                <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">CSS</h3>
+                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="w-full px-4 pb-5">
+            <div class="flex flex-wrap items-center justify-center">
+               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
+                  <img src="./public/img/logo-php.png" alt="">
+               </a>
+               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
+                  <img src="./public/img/logo-css.png" alt="">
+               </a>
+               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
+                  <img src="./public/img/logo-js.png" alt="">
+               </a>
+               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
+                  <img src="./public/img/logo-mysql.png" alt="">
+               </a>
+            </div>
+         </div>
+
+         <div class="w-full px-4">
+            <div class="flex flex-wrap items-center justify-center">
+               <a href="" class="skills-img">
+                  <img src="./public/img/laravel2.png" alt="">
+               </a>
+               <a href="" class="skills-img">
+                  <img src="./public/img/tailwind.png" alt="">
+               </a>
+               <a href="" class="skills-img">
+                  <img src="./public/img/bootstrap.png" alt="">
+               </a>
+               <a href="" class="skills-img">
+                  <img src="./public/img/nodejs.png" alt="">
+               </a>
+               <a href="" class="skills-img">
+                  <img src="./public/img/react.png" alt="">
+               </a>  
+            </div>
+         </div> -->
+      </div>
+    </section>
+    <!-- END Skills -->
+
+    <!-- Project -->
+    <section id="portfolio" class="py-36 bg-gradient-to-r bg-bgPrimary dark:bg-bgDarkPrimary">
+      <div class="container">
+        <div class="w-full px-4 pb-10">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="first-title">Project</h4>
+            <h2 class="second-title">Project Terbaru</h2>
+            <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sunt? Nam eaque dolores aperiam saepe voluptatibus debitis eveniet rem quas!</p>
+          </div>
+        </div>
+
+        <!-- project-list -->
+        <div class="porto-list w-full px-4 flex flex-wrap justify-center lg:max-w-[90%] lg:mx-auto">
+          <div class="mb-12 p-4 lg:flex">
+            <div class="porto-img">
+              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
+            </div>
+            <div class="porto-detail">
+              <h3>Portfolio pertama</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+            </div>
+          </div>
+
+          <div class="mb-12 p-4 lg:flex">
+            <div class="porto-img">
+              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
+            </div>
+            <div class="porto-detail">
+              <h3>Portfolio pertama</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+            </div>
+          </div>
+
+          <div class="mb-12 p-4 lg:flex">
+            <div class="porto-img">
+              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
+            </div>
+            <div class="porto-detail">
+              <h3>Portfolio pertama</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+            </div>
+          </div>
+
+          <div class="mb-12 p-4 lg:flex">
+            <div class="porto-img">
+              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
+            </div>
+            <div class="porto-detail">
+              <h3>Portfolio pertama</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Project -->
+
+    <!-- Learning Path -->
+    <section id="education" class="pt-36 pb-32 bg-gradient-to-r bg-bgSecondary dark:bg-bgDarkSecondary">
+      <div class="container">
+        <div class="w-full px-4 mb-16">
+          <div class="max-w-xl text-start">
+            <h4 class="first-title-stripe">Learning Path</h4>
+            <h2 class="second-title">Education History</h2>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap w-full px-4">
+          <div class="w-full pb-20 lg:pb-0 lg:w-1/2 flex gap-7">
+            <div class="line mt-1 w-[2px] h-full bg-[#f1f1f1] dark:bg-darkSecondary"></div>
+            <div>
+              <div class="mb-12">
+                <h3 class="dot-line text-lg font-semibold text-primary dark:text-darkPrimary">Darma Persada University</h3>
+                <p class="pt-2 text-secondary dark:text-darkSecondary">Bachelor's Degree - Informatics Engineering</p>
+                <h3 class="pt-5 font-semibold text-primary dark:text-darkPrimary">2017 - 2023</h3>
+              </div>
+              <div class="mb-12">
+                <h3 class="dot-line text-lg font-semibold text-primary dark:text-darkPrimary">SMK Global Prima Islamic School</h3>
+                <p class="pt-2 text-secondary dark:text-darkSecondary">Computer and Network Engineering</p>
+                <h3 class="pt-5 font-semibold text-primary dark:text-darkPrimary">2014 - 2017</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full pb-20 lg:pb-0 lg:w-1/2 text-secondary dark:text-darkSecondary">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus aliquam cupiditate consectetur minus maiores perspiciatis iste, temporibus praesentium incidunt quam rerum dolores aliquid inventore provident.</p>
+
+            <div class="flex flex-wrap pt-10">
+              <ul class="w-1/2">
+                <li>skill 1</li>
+                <li>skill 1</li>
+                <li>skill 1</li>
+                <li>skill 1</li>
+                <li>skill 1</li>
+              </ul>
+
+              <ul class="w-1/2">
+                <li>skill 2</li>
+                <li>skill 2</li>
+                <li>skill 2</li>
+                <li>skill 2</li>
+                <li>skill 2</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Learning Path -->
+
+    <!-- Blog -->
+    <section id="blog" class="pt-36 pb-32 bg-bgPrimary dark:bg-bgDarkPrimary">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto text-center mb-16">
+            <h4 class="first-title">Blog</h4>
+            <h2 class="second-title">My little blog</h2>
+            <!-- <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, rerum.</p> -->
+          </div>
+        </div>
+
+        <div class="flex flex-wrap pt-10">
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <img src="./public/img/cafe1.png" alt="" />
+              <div class="py-6 px-7">
+                <h3 class="blog-title">Judul pertama</h3>
+                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
+                <a href="#blog" class="blog-button">Read more...</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <img src="./public/img/cafe1.png" alt="" />
+              <div class="py-6 px-7">
+                <h3 class="blog-title">Judul pertama</h3>
+                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
+                <a href="#blog" class="blog-button">Read more...</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <img src="./public/img/cafe1.png" alt="" />
+              <div class="py-6 px-7">
+                <h3 class="blog-title">Judul pertama</h3>
+                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
+                <a href="#blog" class="blog-button">Read more...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Blog -->
+
+    <!-- Contact -->
+    <section id="contact" class="py-36 bg-bgSecondary dark:bg-bgDarkSecondary">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl text-start mb-16">
+            <h4 class="first-title-stripe">Contact</h4>
+            <h2 class="second-title">Feel free to text me!</h2>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap px-4">
+          <!-- Contact left -->
+          <div class="w-full pb-20 lg:pb-0 lg:w-1/2">
+            <form action="https://formspree.io/f/meqyzklr" method="post">
+              <div class="w-full mx-auto text-sm">
+                <div class="mb-8">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="name"
+                    class="w-full p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500"
+                  />
+                </div>
+                <div class="mb-8">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="email *"
+                    class="w-full p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500"
+                    required
+                  />
+                </div>
+                <div class="mb-8">
+                  <textarea
+                    type="text"
+                    id="message"
+                    name="message"
+                    placeholder="Hi, let's go to the coffee shop and talk about anything ☕"
+                    class="w-full h-32 p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500 resize-none"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button type="submit" class="btn w-full py-3 rounded-full shadow-lg" onclick="return confirm('Want to send this message?')">Send message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Right -->
+          <div class="w-full pb-20 lg:pb-0 lg:w-1/2 flex mx-auto justify-center">
+            <div>
+              <h3 class="right-contact-title relative pl-[40px] text-primaryIconColor before:bg-primaryIconColor mb-10 font-medium">Or directly through my main contact</h3>
+              <div class="flex gap-8 pb-10">
+                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center">
+                  <svg class="pl-1" width="28" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
+                  </svg>
+                </div>
+                <div class="grid items-center">
+                  <h3 class="font-medium text-primary dark:text-darkPrimary">Email</h3>
+                  <p class="text-sm text-secondary dark:text-darkSecondary">muhammadrenaldi588@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-8">
+                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center">
+                  <svg class="pl-1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path
+                      d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
+                    />
+                  </svg>
+                </div>
+                <div class="grid items-center">
+                  <h3 class="font-medium text-primary dark:text-darkPrimary">Whatsapp</h3>
+                  <p class="text-sm text-secondary dark:text-darkSecondary">(+62) 815-1060-4262</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END contact -->
+
+    <!-- Footer -->
+    <footer class="py-16 bg-bgPrimary dark:bg-bgDarkPrimary">
+      <div class="container">
+        <div class="grid lg:grid-cols-2 justify-center items-center pb-10 w-full text-center px-4">
+          <h2 class="max-w-[60%] lg:max-w-full mx-auto font-medium text-xl text-primaryIconColor" style="word-spacing: 3px">This website was created & deployed using</h2>
+          <div class="grid grid-cols-2 items-center">
+            <a href="https://tailwindcss.com/" target="_blank">
+              <img src="./public/img/tailwind.png" alt="tailwindcss" />
+            </a>
+            <a href="https://javascript.com/" target="_blank">
+              <img src="./public/img/javascript.png" alt="javascript" />
+            </a>
+            <a href="https://formspree.io/" target="_blank">
+              <img src="./public/img/formspree.png" alt="formspree" />
+            </a>
+            <a href="https://github.com/" target="_blank">
+              <img src="./public/img/github2.png" alt="github" />
+            </a>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-300 dark:border-darkSecondary text-secondary dark:text-darkSecondary">
+          <div class="pt-6 px-4 text-center text-sm">
+            <p>Thank you for reading up to here!</p>
+            <p class="text-primaryIconColor font-semibold">Created by Renaldi</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- Back to top -->
+    <a href="#home" id="back-top" class="fixed hidden z-50 items-center justify-center bottom-5 right-5 w-12 h-12 rounded-full bg-primaryIconColor transition-all duration-300 animate-bounce hover:bg-indigo-400 lg:bottom-10 lg:right-10">
+      <span class="block mt-1 w-4 h-4 border-l-2 border-t-2 rotate-45 border-slate-100"></span>
+    </a>
+    <!-- END back to top -->
+
+    <script src="./dist/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ------------------------- General ------------------------- */
+/* Title */
+.first-title {
+  @apply relative text-secondary mb-3 uppercase tracking-titleSpacing
+  dark:text-darkSecondary;
+}
+
+.first-title-stripe {
+  @apply relative pl-[40px] text-[0.9rem] inline-block text-secondary uppercase tracking-titleSpacing
+  dark:text-darkSecondary;
+}
+
+.first-title-stripe::before,
+.right-contact-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: gray;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.second-title {
+  @apply text-3xl font-semibold text-primaryIconColor mt-3 mb-4 lg:text-[2rem];
+}
+
+/* button */
+.btn {
+  @apply font-medium bg-primaryIconColor text-white
+   hover:bg-indigo-400 hover:text-slate-50 transition duration-300 ease-in-out
+   dark:text-black;
+}
+
+/* SVG icons */
+#skills svg,
+#contact svg {
+  @apply w-8 mx-auto fill-primaryIconColor;
+}
+
+/* ------------------------- Specific ------------------------- */
+
+/* ----- Dark Mode toggle ----- */
+.dark-toggle-animate {
+  @apply bg-slate-300;
+}
+.dark-toggle-animate > .circle-toggle {
+  @apply translate-x-6 bg-primary;
+}
+
+/* ----- Nav-fixed ----- */
+.nav-fixed {
+  @apply fixed py-2 bg-white/[0.7] backdrop-blur-[5px] shadow-sm shadow-slate-50 lg:py-1
+  dark:bg-bgDarkPrimary dark:shadow-slate-950;
+}
+
+/* ----- Nav list ----- */
+.nav-list-item {
+  @apply block mx-6 text-primary 
+   group-hover:font-bold group-hover:text-primaryIconColor group-hover:tracking-widest group-hover:underline group-hover:underline-offset-[15px] transition-all duration-500
+   dark:text-darkSecondary;
+}
+
+/* ----- Hamburger ----- */
+.hamburger-line {
+  @apply block w-[30px] h-[2px] my-2 rounded-full bg-black
+  dark:bg-darkSecondary;
+}
+/* transisi dan origin (sumbu) ga bisa langsung di sini, transisi outnya jadi berantakan karna class .hamburger-activenya langsung ilang (nambahinnya pake toggle JS) */
+.hamburger-active > span:nth-child(1) {
+  @apply -rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply rotate-45;
+}
+
+/* ----- Portfolio ----- */
+.porto-img {
+  @apply rounded-xl shadow-lg overflow-hidden max-w-[500px];
+}
+
+.porto-detail > h3 {
+  @apply text-xl font-semibold text-primaryIconColor mt-5 mb-3;
+}
+.porto-detail > p {
+  @apply text-base text-secondary dark:text-darkSecondary;
+}
+
+.porto-list div:nth-child(odd) > .porto-detail {
+  @apply lg:order-first lg:pr-10 mt-12;
+}
+
+.porto-list div:nth-child(even) > .porto-detail {
+  @apply lg:pl-10 mt-12;
+}
+
+/* ----- Education ----- */
+#education li {
+  @apply list-disc list-inside p-1;
+}
+
+.dot-line {
+  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full;
+}
+
+/* ----- Blog ----- */
+.blog-title {
+  @apply pt-3 pb-5 text-lg text-primary font-medium
+  dark:text-darkPrimary;
+}
+
+.blog-button {
+  @apply inline-block mt-5 mb-2 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
+   hover:text-primary transition duration-300 ease-in-out
+   dark:text-darkSecondary dark:hover:text-darkPrimary;
+}
+
+/* ----- Footer ----- */
+footer img {
+  @apply w-full max-w-[180px] px-5 lg:px-6 py-6 opacity-80 hover:opacity-100 transition duration-500 lg:py-0 lg:max-w-[200px]
+  dark:grayscale dark:hover:grayscale-0;
+}
