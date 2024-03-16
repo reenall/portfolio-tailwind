@@ -6,6 +6,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+::-webkit-scrollbar {
+  @apply w-[5px] h-[5px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 hover:bg-slate-400 mt-52 rounded-full;
+}
+
 /* ------------------------- General ------------------------- */
 /* Title */
 .first-title {
@@ -44,6 +56,24 @@ body {
 #skills svg,
 #contact svg {
   @apply w-8 mx-auto fill-primaryIconColor;
+}
+
+/* Cards */
+.card-title {
+  @apply pt-3 pb-5 text-lg text-primary font-medium
+  dark:text-darkPrimary;
+}
+
+.card-button {
+  @apply inline-block mt-5 mb-2 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
+   hover:text-primary transition duration-300 ease-in-out
+   dark:text-darkSecondary dark:hover:text-darkPrimary;
+}
+
+.card-button-test {
+  @apply inline-block mt-5 mb-5 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
+   hover:text-primary transition duration-300 ease-in-out
+   dark:text-darkSecondary dark:hover:text-darkPrimary;
 }
 
 /* ------------------------- Specific ------------------------- */
@@ -85,24 +115,46 @@ body {
   @apply rotate-45;
 }
 
-/* ----- Portfolio ----- */
-.porto-img {
-  @apply rounded-xl shadow-lg overflow-hidden max-w-[500px];
+/* ----- Project ----- */
+.view-images-btn {
+  @apply absolute hidden top-0 w-full h-full items-center justify-center cursor-pointer bg-black/50 backdrop-blur-sm font-light;
 }
 
-.porto-detail > h3 {
-  @apply text-xl font-semibold text-primaryIconColor mt-5 mb-3;
+.project-img:hover > .view-images-btn {
+  @apply flex;
 }
-.porto-detail > p {
+
+/* view img */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.6s;
+}
+
+.thumbnail-active {
+  @apply brightness-50;
+}
+
+.thumbnail-img {
+  @apply w-full h-full rounded-lg border border-slate-400 cursor-pointer transition-all duration-500 group-hover:-translate-y-5;
+}
+/* end view img */
+
+.project-detail > p {
   @apply text-base text-secondary dark:text-darkSecondary;
 }
 
-.porto-list div:nth-child(odd) > .porto-detail {
-  @apply lg:order-first lg:pr-10 mt-12;
+.project-detail > ul > li {
+  @apply list-decimal list-outside text-base text-secondary dark:text-darkSecondary ml-7 pl-2;
 }
 
-.porto-list div:nth-child(even) > .porto-detail {
-  @apply lg:pl-10 mt-12;
+.project-detail > ul > li > span {
+  @apply font-medium;
 }
 
 /* ----- Education ----- */
@@ -114,20 +166,8 @@ body {
   @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full;
 }
 
-/* ----- Blog ----- */
-.blog-title {
-  @apply pt-3 pb-5 text-lg text-primary font-medium
-  dark:text-darkPrimary;
-}
-
-.blog-button {
-  @apply inline-block mt-5 mb-2 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
-   hover:text-primary transition duration-300 ease-in-out
-   dark:text-darkSecondary dark:hover:text-darkPrimary;
-}
-
 /* ----- Footer ----- */
 footer img {
-  @apply w-full max-w-[180px] px-5 lg:px-6 py-6 opacity-80 hover:opacity-100 transition duration-500 lg:py-0 lg:max-w-[200px]
+  @apply max-w-[160px] px-5 lg:px-6 transition duration-500 lg:max-w-[170px]
   dark:grayscale dark:hover:grayscale-0;
 }

@@ -14,7 +14,7 @@ window.onscroll = () => {
    }
 }
 
-// Hamburger
+// ----- Hamburger -----
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
 
@@ -31,7 +31,7 @@ window.addEventListener('click', (event) => {
    }
 })
 
-// Dark Mode
+// ----- Dark Mode -----
 const darkToggle = document.querySelector('.dark-toggle');
 const html = document.querySelector('html');
 
@@ -47,3 +47,43 @@ darkToggle.addEventListener('click', () => {
 if (localStorage.theme === 'dark'){
    darkToggle.classList.add('dark-toggle-animate');
  } 
+
+
+// ----- Page read/view button -----
+const blog1 = document.querySelector('.blog-page-1');
+const blog2 = document.querySelector('.blog-page-2');
+const blog3 = document.querySelector('.blog-page-3');
+
+const projectLaravel = document.querySelector('.project-page-laravel');
+
+function pageReadBtn (pageNumber) {
+   pageNumber.classList.replace('hidden', 'flex')
+}
+function pageCloseBtn (pageNumber) {
+   pageNumber.classList.replace('flex', 'hidden')
+}
+
+
+// ----- View images -----
+const jumboImg = document.querySelector('.jumbo-img');
+const thumbnailList = document.querySelector('.thumbnail-list');
+const thumbnailsImg = document.querySelectorAll('.thumbnail-img');
+const firstThumbnail = thumbnailList.firstElementChild.querySelector('img');
+
+firstThumbnail.classList.add('thumbnail-active');
+
+thumbnailList.addEventListener('click', (e) => {
+   if(e.target.className == 'thumbnail-img') {
+      jumboImg.src = e.target.src;
+
+      jumboImg.classList.add('fade')
+      setTimeout(() => {
+         jumboImg.classList.remove('fade')
+      }, 500);
+
+      thumbnailsImg.forEach((thumbnail) => {
+         thumbnail.classList.remove('thumbnail-active');                                    // paksa semua .thumbnail yang memiliki .active, menjadi .thumbnail aja (reset)         
+      });
+      e.target.classList.add('thumbnail-active');
+   }
+})

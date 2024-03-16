@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="dist/style.css" />
-    <title>Document</title>
+    <title>Renaldi | Portfolio</title>
 
     <script>
       // biar pas direfresh, status dark modenya tetep sesuai pilihan dan ga kereset (dokumentasi dark mode)
@@ -20,7 +20,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="dark:bg-black">
     <!-- Header -->
     <header class="absolute z-50 flex top-0 items-center w-full bg-transparent py-8 transition-all duration-500">
       <div class="container">
@@ -58,7 +58,7 @@
                 <a href="#contact" class="nav-list-item">Contact</a>
               </li>
               <!-- dark mode -->
-              <li class="flex items-center justify-end lg:justify-center border-l-2 pl-4">
+              <li class="flex items-center justify-end lg:justify-center lg:border-l-2 lg:pl-4">
                 <div class="flex">
                   <div class="dark-toggle relative flex items-center w-14 h-7 mx-3 rounded-full bg-primary cursor-pointer">
                     <div class="circle-toggle absolute z-[999] w-6 h-6 ml-1 rounded-full bg-bgSecondary transition duration-500 ease-in-out"></div>
@@ -206,10 +206,11 @@
                       </g>
                     </g>
                   </svg>
-                  <!-- <img src="./public/img/logo-js.png" alt="PHP" class="w-12 mx-auto"> -->
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">JavaScript</h3>
-                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center grayscale">
+                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                </div>
               </div>
             </div>
             <div class="w-full p-4 lg:w-1/3">
@@ -242,7 +243,9 @@
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">PHP</h3>
                 <p class="text-secondary dark:text-darkSecondary" style="word-spacing: 5px"></p>
-                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center justify-center grayscale">
+                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                </div>
               </div>
             </div>
             <div class="w-full p-4 lg:w-1/3">
@@ -263,102 +266,136 @@
                   <!-- <img src="./public/img/logo-css.png" alt="PHP" class="w-12 mx-auto"> -->
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">CSS</h3>
-                <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center grayscale">
+                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- <div class="w-full px-4 pb-5">
-            <div class="flex flex-wrap items-center justify-center">
-               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
-                  <img src="./public/img/logo-php.png" alt="">
-               </a>
-               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
-                  <img src="./public/img/logo-css.png" alt="">
-               </a>
-               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
-                  <img src="./public/img/logo-js.png" alt="">
-               </a>
-               <a href="" class="w-full max-w-[100px] px-5 lg:px-6 py-6 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 lg:py-0">
-                  <img src="./public/img/logo-mysql.png" alt="">
-               </a>
-            </div>
-         </div>
-
-         <div class="w-full px-4">
-            <div class="flex flex-wrap items-center justify-center">
-               <a href="" class="skills-img">
-                  <img src="./public/img/laravel2.png" alt="">
-               </a>
-               <a href="" class="skills-img">
-                  <img src="./public/img/tailwind.png" alt="">
-               </a>
-               <a href="" class="skills-img">
-                  <img src="./public/img/bootstrap.png" alt="">
-               </a>
-               <a href="" class="skills-img">
-                  <img src="./public/img/nodejs.png" alt="">
-               </a>
-               <a href="" class="skills-img">
-                  <img src="./public/img/react.png" alt="">
-               </a>  
-            </div>
-         </div> -->
       </div>
     </section>
     <!-- END Skills -->
 
     <!-- Project -->
-    <section id="portfolio" class="py-36 bg-gradient-to-r bg-bgPrimary dark:bg-bgDarkPrimary">
+    <section id="project" class="pt-36 pb-32 bg-bgPrimary dark:bg-bgDarkPrimary">
       <div class="container">
-        <div class="w-full px-4 pb-10">
-          <div class="max-w-xl mx-auto text-center mb-16">
+        <div class="w-full px-4">
+          <div class="mx-auto text-center mb-16">
             <h4 class="first-title">Project</h4>
             <h2 class="second-title">Project Terbaru</h2>
-            <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sunt? Nam eaque dolores aperiam saepe voluptatibus debitis eveniet rem quas!</p>
           </div>
         </div>
 
-        <!-- project-list -->
-        <div class="porto-list w-full px-4 flex flex-wrap justify-center lg:max-w-[90%] lg:mx-auto">
-          <div class="mb-12 p-4 lg:flex">
-            <div class="porto-img">
-              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
-            </div>
-            <div class="porto-detail">
-              <h3>Portfolio pertama</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+        <div class="flex flex-wrap pt-10">
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <div class="project-img relative">
+                <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
+                <button onclick="pageReadBtn(projectLaravel)" class="view-images-btn">
+                  <p class="text-white tracking-widest">View Images</p>
+                </butt>
+              </div>
+              <div class="project-detail my-6 px-7 max-h-[300px] overflow-auto w-full">
+                <h3 class="card-title">Blog Website</h3>
+                <p class="text-base pb-3 text-pretty">Program ini dibuat menggunakan teknologi Back-End berbasis PHP Laravel, Framework UI dari Bootstrap, dan RDBMS menggunakan MySQL.</p>
+                <ul class="pt-5">
+                  <p class="font-semibold">Features:</p>
+                  <li>Login Admin & Login Session</li>
+                  <li>Dashboard Admin</li>
+                  <li>Media Query, untuk mengelola gambar</li>
+                  <li>Text editor dari Trix, untuk mengelola konten blog post</li>
+                  <li>Terintegrasi dengan Database</li>
+                  <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
+                </ul>
+                <ul class="pt-5">
+                  <p class="font-semibold">Security:</p>
+                  <li>Enkripsi password user</li>
+                  <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
+                  <li>
+                    Security untuk mencegah <span>Cross Site Request Forgery Attack</span> dan <span>XSS Attack</span> menggunakan fitur Laravel <span>@csrf</span> dan <span>htmlspecialchars()</span> yang terintegrasi dalam echo statement
+                    milik Blade
+                  </li>
+                </ul>
+
+                <!-- Project view images 1 -->
+                <div class="project-page-laravel fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-100/80 backdrop-blur-md">
+                  <div class="flex mx-auto px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
+                    <img src="./public/img/project/laravel-blog.png" alt="" class="jumbo-img rounded-xl shadow-md" />
+                  </div>
+                  <div class="thumbnail-list absolute bottom-20 md:bottom-10 lg:bottom-5 right-1/2 translate-x-[50%] flex gap-5 h-24 w-max max-w-full p-3 bg-slate-200 border border-slate-300 shadow-md rounded-xl">
+                    <div class="group">
+                      <img src="./public/img/project/laravel-blog.png" class="thumbnail-img">
+                    </div>
+                    <div class="group">
+                      <img src="./public/img/project/laravel-categories.png" class="thumbnail-img">
+                    </div>
+                    <div class="group">
+                      <img src="./public/img/project/laravel-dashboard.png" class="thumbnail-img">
+                    </div>
+                  </div>
+                  <button class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-slate-300 text-slate-500 hover:bg-slate-800 hover:text-white text-2xl cursor-pointer transition-all duration-300 ease-in-out sm:-translate-x-1 lg:left-auto lg:right-14 lg:rounded-full  xl:right-16"
+                  onclick="pageCloseBtn(projectLaravel)"><p>X</p> 
+                  </button>
+                </div>
+                <!-- END Project view images 1 -->
+              </div>
             </div>
           </div>
 
-          <div class="mb-12 p-4 lg:flex">
-            <div class="porto-img">
-              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
-            </div>
-            <div class="porto-detail">
-              <h3>Portfolio pertama</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
+              <div class="project-detail my-6 px-7 h-[300px] overflow-auto">
+                <h3 class="card-title">Blog Website</h3>
+                <p class="text-base pb-3" maxlength="5">Program ini dibuat menggunakan teknologi Back-End berbasis Laravel, dan Framework UI dari Bootstrap.</p>
+                <ul class="pt-5">
+                  <p class="font-semibold">Fitur:</p>
+                  <li>Login Admin & Login Session</li>
+                  <li>Dashboard Admin</li>
+                  <li>Media Query, untuk mengelola gambar</li>
+                  <li>Text editor dari Trix, untuk mengelola konten blog post</li>
+                  <li>Terintegrasi dengan Database</li>
+                  <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
+                </ul>
+                <ul class="pt-5">
+                  <p class="font-semibold">Keamanan:</p>
+                  <li>Enkripsi password user</li>
+                  <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
+                  <li>
+                    Security untuk mencegah <span>Cross Site Request Forgery Attack</span> dan <span>XSS Attack</span> menggunakan fitur Laravel <span>@csrf</span> dan <span>htmlspecialchars()</span> yang terintegrasi dalam echo statement
+                    milik Blade
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="mb-12 p-4 lg:flex">
-            <div class="porto-img">
-              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
-            </div>
-            <div class="porto-detail">
-              <h3>Portfolio pertama</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
-            </div>
-          </div>
-
-          <div class="mb-12 p-4 lg:flex">
-            <div class="porto-img">
-              <img src="./public/img/cafe1.png" alt="img1" class="w-full" />
-            </div>
-            <div class="porto-detail">
-              <h3>Portfolio pertama</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum recusandae natus, suscipit eveniet praesentium dolorem explicabo nisi tempore officiis odit?</p>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
+              <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
+              <div class="project-detail my-6 px-7 max-h-[300px] overflow-auto">
+                <h3 class="card-title">Blog Website</h3>
+                <p class="text-base pb-3" maxlength="5">Program ini dibuat menggunakan teknologi Back-End berbasis Laravel, dan Framework UI dari Bootstrap.</p>
+                <ul class="pt-5">
+                  <p class="font-semibold">Fitur:</p>
+                  <li>Login Admin & Login Session</li>
+                  <li>Dashboard Admin</li>
+                  <li>Media Query, untuk mengelola gambar</li>
+                  <li>Text editor dari Trix, untuk mengelola konten blog post</li>
+                  <li>Terintegrasi dengan Database</li>
+                  <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
+                </ul>
+                <ul class="pt-5">
+                  <p class="font-semibold">Keamanan:</p>
+                  <li>Enkripsi password user</li>
+                  <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
+                  <li>
+                    Security untuk mencegah <span>Cross Site Request Forgery Attack</span> dan <span>XSS Attack</span> menggunakan fitur Laravel <span>@csrf</span> dan <span>htmlspecialchars()</span> yang terintegrasi dalam echo statement
+                    milik Blade
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -394,23 +431,26 @@
           </div>
 
           <div class="w-full pb-20 lg:pb-0 lg:w-1/2 text-secondary dark:text-darkSecondary">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus aliquam cupiditate consectetur minus maiores perspiciatis iste, temporibus praesentium incidunt quam rerum dolores aliquid inventore provident.</p>
+            <p class="leading-7 text-pretty">
+              Selain di pendidikan formal, selama 8 bulan terakhir saya juga terus mempelajari materi-materi pemrograman melalui pembelajaran online untuk mengembangkan programming skill saya. Berikut adalah
+              daftar skills teknologi pemrograman yang saya miliki
+            </p>
 
-            <div class="flex flex-wrap pt-10">
+            <div class="flex flex-wrap pt-7">
               <ul class="w-1/2">
-                <li>skill 1</li>
-                <li>skill 1</li>
-                <li>skill 1</li>
-                <li>skill 1</li>
-                <li>skill 1</li>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>JavaScript</li>
+                <li>Node.Js</li>
+                <li>React.Js</li>
               </ul>
 
               <ul class="w-1/2">
-                <li>skill 2</li>
-                <li>skill 2</li>
-                <li>skill 2</li>
-                <li>skill 2</li>
-                <li>skill 2</li>
+                <li>CSS</li>
+                <li>Tailwind Css</li>
+                <li>Bootstrap</li>
+                <li>MySQL</li>
+                <li>Git</li>
               </ul>
             </div>
           </div>
@@ -426,7 +466,6 @@
           <div class="mx-auto text-center mb-16">
             <h4 class="first-title">Blog</h4>
             <h2 class="second-title">My little blog</h2>
-            <!-- <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, rerum.</p> -->
           </div>
         </div>
 
@@ -435,9 +474,35 @@
             <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
               <img src="./public/img/cafe1.png" alt="" />
               <div class="py-6 px-7">
-                <h3 class="blog-title">Judul pertama</h3>
+                <h3 class="card-title">Judul pertama</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <a href="#blog" class="blog-button">Read more...</a>
+                <button class="card-button" onclick="pageReadBtn(blog1)">Read more..</button>
+
+                <!-- Blog Read More 1 -->
+                <div class="blog-page-1 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
+                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] lg:max-w-[85%]">
+                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
+                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Pertama</h2>
+                      <p class="pt-3">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio sed accusantium, nulla, animi quam ad quis placeat nesciunt ex delectus, debitis recusandae expedita ipsum nostrum quasi eveniet fugit
+                        corporis est sint nobis incidunt aspernatur. Harum quas numquam placeat sed cum distinctio quisquam in, nemo laboriosam, dolores totam itaque nulla ipsam voluptatem, eveniet velit quaerat eum aliquid quis molestias
+                        explicabo optio ipsa. Rem ratione ipsum temporibus modi laborum, eius ipsa nam vero unde iusto corporis distinctio rerum, placeat numquam nisi eos omnis debitis quidem. Laudantium facilis tempore culpa dignissimos
+                        explicabo placeat sed neque est quaerat recusandae nemo numquam, molestias ipsa exercitationem, ducimus, magni velit at voluptate vel nostrum assumenda aut! Impedit quas cumque, voluptatum laudantium voluptatibus
+                        ducimus at! Ipsum ea consectetur aspernatur praesentium esse doloribus nesciunt ratione tempore ducimus delectus voluptate dolor aliquam tenetur natus perspiciatis fuga earum, quis cum sed sapiente aut dignissimos
+                        minima? Deserunt esse sunt provident amet voluptatum sequi dicta asperiores consectetur rem cumque sint velit possimus similique repellat ducimus ullam atque nobis porro eveniet molestiae, quo quaerat totam! Repellat
+                        ea, neque voluptas distinctio maiores, excepturi animi eum alias accusantium inventore praesentium culpa! Provident at molestias repellat ea, odit repudiandae quasi eveniet totam, sapiente placeat facilis molestiae?
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-slate-300 text-slate-500 hover:bg-slate-800 hover:text-white text-2xl cursor-pointer transition-all duration-300 ease-in-out sm:-translate-x-1 lg:left-auto lg:right-[70px] lg:rounded-full xl:right-36"
+                    onclick="pageCloseBtn(blog1)"
+                  >
+                    X
+                  </div>
+                </div>
+                <!-- END Blog Read More 1 -->
               </div>
             </div>
           </div>
@@ -445,9 +510,32 @@
             <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
               <img src="./public/img/cafe1.png" alt="" />
               <div class="py-6 px-7">
-                <h3 class="blog-title">Judul pertama</h3>
+                <h3 class="card-title">Judul kedua</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <a href="#blog" class="blog-button">Read more...</a>
+                <button class="card-button" onclick="pageReadBtn(blog2)">Read more..</button>
+
+                <!-- Blog Read More 2 -->
+                <div class="blog-page-2 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
+                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
+                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
+                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Kedua</h2>
+                      <p class="pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reiciendis blanditiis optio distinctio? Fuga, maxime blanditiis necessitatibus culpa laborum quidem at tempore voluptates a quam beatae neque vero autem
+                        alias modi minus voluptate pariatur. Corrupti est mollitia quisquam atque quod. Beatae laudantium corporis magni architecto, commodi nemo deserunt quidem ut vero ratione provident aliquid sequi officia incidunt enim
+                        voluptatum veniam, aspernatur alias. Incidunt blanditiis veniam officiis unde praesentium labore voluptas atque distinctio nesciunt inventore quaerat temporibus quae dolorem quia, exercitationem architecto sit
+                        doloribus numquam, quod minima! Temporibus fuga accusantium omnis eum reiciendis, suscipit sequi architecto sed inventore sit, doloremque optio.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-primaryIconColor text-white text-2xl cursor-pointer hover:opacity-80 transition-all duration-300 sm:-translate-x-1 xl:-translate-x-0"
+                    onclick="pageCloseBtn(blog2)"
+                  >
+                    X
+                  </div>
+                </div>
+                <!-- END Blog Read More 2 -->
               </div>
             </div>
           </div>
@@ -455,9 +543,32 @@
             <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
               <img src="./public/img/cafe1.png" alt="" />
               <div class="py-6 px-7">
-                <h3 class="blog-title">Judul pertama</h3>
+                <h3 class="card-title">Judul Ketiga</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <a href="#blog" class="blog-button">Read more...</a>
+                <button class="card-button" onclick="pageReadBtn(blog3)">Read more..</button>
+
+                <!-- Blog Read More 3 -->
+                <div class="blog-page-3 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
+                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
+                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
+                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Ketiga</h2>
+                      <p class="pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reiciendis blanditiis optio distinctio? Fuga, maxime blanditiis necessitatibus culpa laborum quidem at tempore voluptates a quam beatae neque vero autem
+                        alias modi minus voluptate pariatur. Corrupti est mollitia quisquam atque quod. Beatae laudantium corporis magni architecto, commodi nemo deserunt quidem ut vero ratione provident aliquid sequi officia incidunt enim
+                        voluptatum veniam, aspernatur alias. Incidunt blanditiis veniam officiis unde praesentium labore voluptas atque distinctio nesciunt inventore quaerat temporibus quae dolorem quia, exercitationem architecto sit
+                        doloribus numquam, quod minima! Temporibus fuga accusantium omnis eum reiciendis, suscipit sequi architecto sed inventore sit, doloremque optio.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-primaryIconColor text-white text-2xl cursor-pointer hover:opacity-80 transition-all duration-300 sm:-translate-x-1 xl:-translate-x-0"
+                    onclick="pageCloseBtn(blog3)"
+                  >
+                    X
+                  </div>
+                </div>
+                <!-- END Blog Read More 3 -->
               </div>
             </div>
           </div>
@@ -554,11 +665,11 @@
     <!-- END contact -->
 
     <!-- Footer -->
-    <footer class="py-16 bg-bgPrimary dark:bg-bgDarkPrimary">
+    <footer class="py-20 bg-bgPrimary dark:bg-bgDarkPrimary">
       <div class="container">
-        <div class="grid lg:grid-cols-2 justify-center items-center pb-10 w-full text-center px-4">
-          <h2 class="max-w-[60%] lg:max-w-full mx-auto font-medium text-xl text-primaryIconColor" style="word-spacing: 3px">This website was created & deployed using</h2>
-          <div class="grid grid-cols-2 items-center">
+        <div class="flex flex-wrap justify-center items-center pb-5 w-full text-center px-4">
+          <h2 class="w-full mx-auto pb-10 font-medium text-xl text-primaryIconColor" style="word-spacing: 3px">This website was created using</h2>
+          <div class="grid gap-10 pb-10 md:flex md:flex-wrap justify-center items-center">
             <a href="https://tailwindcss.com/" target="_blank">
               <img src="./public/img/tailwind.png" alt="tailwindcss" />
             </a>
@@ -568,16 +679,13 @@
             <a href="https://formspree.io/" target="_blank">
               <img src="./public/img/formspree.png" alt="formspree" />
             </a>
-            <a href="https://github.com/" target="_blank">
-              <img src="./public/img/github2.png" alt="github" />
-            </a>
           </div>
         </div>
 
-        <div class="border-t border-slate-300 dark:border-darkSecondary text-secondary dark:text-darkSecondary">
-          <div class="pt-6 px-4 text-center text-sm">
-            <p>Thank you for reading up to here!</p>
-            <p class="text-primaryIconColor font-semibold">Created by Renaldi</p>
+        <div class="border-t border-slate-300 dark:border-darkSecondary dark:text-darkSecondary">
+          <div class="justify-center text-center pt-10 px-4 text-sm">
+            <p class="text-secondary">Thank you for reading up to here!</p>
+            <p class="text-primaryIconColor font-medium">Created by Renaldi</p>
           </div>
         </div>
       </div>
