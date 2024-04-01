@@ -2,76 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Roboto", sans-serif;
+body > section:nth-child(even) {
+  @apply bg-bgPrimary dark:bg-bgDarkPrimary;
+}
+body > section:nth-child(odd) {
+  @apply bg-bgSecondary dark:bg-bgDarkSecondary;
 }
 
-::-webkit-scrollbar {
-  @apply w-[5px] h-[5px];
+body::-webkit-scrollbar {
+  @apply w-[5px] dark:w-[4px] dark:bg-black;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 hover:bg-slate-400 mt-52 rounded-full;
+body::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 hover:bg-slate-400 rounded-full dark:bg-slate-800 dark:hover:bg-slate-700;
 }
 
 /* ------------------------- General ------------------------- */
 /* Title */
 .first-title {
-  @apply relative text-secondary mb-3 uppercase tracking-titleSpacing
-  dark:text-darkSecondary;
+  @apply relative text-[0.9rem] text-secondary mb-3 uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
 }
 
 .first-title-stripe {
-  @apply relative pl-[40px] text-[0.9rem] inline-block text-secondary uppercase tracking-titleSpacing
-  dark:text-darkSecondary;
+  @apply relative inline-block pl-[40px] text-[0.9rem] text-secondary uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
 }
 
 .first-title-stripe::before,
 .right-contact-title::before {
-  content: "";
-  width: 30px;
-  height: 1px;
-  background-color: gray;
-  position: absolute;
-  left: 0;
-  top: 50%;
+  @apply content-[""] absolute left-0 top-[50%] w-[30px] h-[1px] bg-[#d1d5db];
 }
 
 .second-title {
-  @apply text-3xl font-semibold text-primaryIconColor mt-3 mb-4 lg:text-[2rem];
+  @apply text-3xl font-semibold text-primaryIconColor mt-3 mb-4 lg:text-[2rem]
+  dark:text-darkPrimaryIconColor;
 }
 
 /* button */
 .btn {
-  @apply font-medium bg-primaryIconColor text-white
-   hover:bg-indigo-400 hover:text-slate-50 transition duration-300 ease-in-out
-   dark:text-black;
+  @apply font-medium text-white bg-primaryIconColor
+   hover:bg-[#92bba6] hover:text-slate-50 transition-all duration-300 ease-in-out
+   dark:text-black dark:bg-slate-300 dark:hover:bg-slate-600;
 }
 
 /* SVG icons */
 #skills svg,
 #contact svg {
-  @apply w-8 mx-auto fill-primaryIconColor;
+  @apply w-[26px] mx-auto fill-primaryIconColor dark:fill-darkPrimaryIconColor;
 }
 
 /* Cards */
 .card-title {
-  @apply pt-3 pb-5 text-lg text-primary font-medium
-  dark:text-darkPrimary;
+  @apply pt-3 pb-5 text-lg text-primaryIconColor font-medium
+  dark:text-darkPrimaryIconColor;
 }
 
 .card-button {
   @apply inline-block mt-5 mb-2 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
-   hover:text-primary transition duration-300 ease-in-out
-   dark:text-darkSecondary dark:hover:text-darkPrimary;
-}
-
-.card-button-test {
-  @apply inline-block mt-5 mb-5 py-2 rounded-xl italic text-secondary underline underline-offset-[10px]
    hover:text-primary transition duration-300 ease-in-out
    dark:text-darkSecondary dark:hover:text-darkPrimary;
 }
@@ -88,23 +76,23 @@ body {
 
 /* ----- Nav-fixed ----- */
 .nav-fixed {
-  @apply fixed py-2 bg-white/[0.7] backdrop-blur-[5px] shadow-sm shadow-slate-50 lg:py-1
+  @apply fixed py-2 lg:py-1 bg-white/[0.7] backdrop-blur-[5px] shadow-sm shadow-slate-50
   dark:bg-bgDarkPrimary dark:shadow-slate-950;
 }
 
 /* ----- Nav list ----- */
 .nav-list-item {
   @apply block mx-6 text-primary 
-   group-hover:font-bold group-hover:text-primaryIconColor group-hover:tracking-widest group-hover:underline group-hover:underline-offset-[15px] transition-all duration-500
-   dark:text-darkSecondary;
+  transition-all duration-500 group-hover:tracking-widest group-hover:underline group-hover:underline-offset-[15px] group-hover:text-primaryIconColor
+dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 }
 
 /* ----- Hamburger ----- */
 .hamburger-line {
-  @apply block w-[30px] h-[2px] my-2 rounded-full bg-black
+  @apply block w-[30px] h-[2px] my-2 rounded-full bg-primary
   dark:bg-darkSecondary;
 }
-/* transisi dan origin (sumbu) ga bisa langsung di sini, transisi outnya jadi berantakan karna class .hamburger-activenya langsung ilang (nambahinnya pake toggle JS) */
+/* transisi dan origin (sumbu) ga bisa langsung di sini, transisi outnya jadi berantakan karna class .hamburger-activenya langsung hilang (penambahan classnya via toggle JS) */
 .hamburger-active > span:nth-child(1) {
   @apply -rotate-45;
 }
@@ -116,15 +104,32 @@ body {
 }
 
 /* ----- Project ----- */
+.project-card-wrapper {
+  @apply mb-8 border border-indigo-50 bg-white text-secondary shadow-lg rounded-xl overflow-hidden
+  dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black;
+}
+
+.project-img {
+  @apply relative flex items-center justify-center h-[250px] sm:h-[265px] px-1 py-2 dark:from-slate-50 dark:to-slate-50;
+}
+
+.project-img .horizontal-img {
+  @apply absolute left-7 z-10 w-[70%] h-[80%] sm:h-[80%] drop-shadow-portfolioImg rounded-xl;
+}
+
+.project-img .vertical-img {
+  @apply absolute w-[40%] h-full top-0 right-0;
+}
+
 .view-images-btn {
-  @apply absolute hidden top-0 w-full h-full items-center justify-center cursor-pointer bg-black/50 backdrop-blur-sm font-light;
+  @apply absolute z-20 hidden top-0 left-0 right-0 bottom-0 items-center justify-center cursor-pointer bg-black/50 backdrop-blur-sm font-light;
 }
 
 .project-img:hover > .view-images-btn {
   @apply flex;
 }
 
-/* view img */
+/* view images */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -143,14 +148,27 @@ body {
 .thumbnail-img {
   @apply w-full h-full rounded-lg border border-slate-400 cursor-pointer transition-all duration-500 group-hover:-translate-y-5;
 }
-/* end view img */
+/* end view images */
+
+.project-detail {
+  @apply mt-6 mb-9 px-7 h-[275px] overflow-auto;
+}
+
+.project-detail::-webkit-scrollbar {
+  @apply w-[4px];
+}
+
+.project-detail::-webkit-scrollbar-thumb {
+  @apply bg-primaryIconColor/60 hover:bg-slate-400 mt-52 rounded-full
+  dark:bg-slate-800 dark:hover:bg-slate-700;
+}
 
 .project-detail > p {
   @apply text-base text-secondary dark:text-darkSecondary;
 }
 
 .project-detail > ul > li {
-  @apply list-decimal list-outside text-base text-secondary dark:text-darkSecondary ml-7 pl-2;
+  @apply list-disc list-outside text-base text-secondary dark:text-darkSecondary ml-7 pl-2;
 }
 
 .project-detail > ul > li > span {
@@ -159,15 +177,33 @@ body {
 
 /* ----- Education ----- */
 #education li {
-  @apply list-disc list-inside p-1;
+  @apply mb-3 lowercase grayscale hover:grayscale-0 hover:text-black transition-all cursor-default dark:text-slate-700 dark:hover:text-darkPrimary;
+}
+
+#education li > img {
+  @apply inline-block w-8 pr-3;
 }
 
 .dot-line {
-  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full;
+  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full dark:before:bg-darkPrimary;
 }
 
 /* ----- Footer ----- */
+.footer-title {
+  @apply relative inline-block pl-[40px] text-[0.9rem] text-secondary uppercase tracking-titleSpacing
+  dark:text-darkPrimary;
+}
+.footer-title:before {
+  @apply sm:content-[""] absolute left-0 top-[15px] w-[30px] h-[1px] bg-[#d1d5db];
+}
+
 footer img {
-  @apply max-w-[160px] px-5 lg:px-6 transition duration-500 lg:max-w-[170px]
-  dark:grayscale dark:hover:grayscale-0;
+  @apply inline-block max-w-[40px] pr-2 grayscale
+  sm:max-w-[65px] sm:pl-5
+  lg:pl-6 lg:max-w-[75px];
+}
+
+footer .text-img {
+  @apply font-normal text-base text-secondary dark:text-darkPrimary 
+  lg:text-[17px];
 }

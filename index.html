@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="dist/style.css" />
+    <!-- <link rel="stylesheet" href="dist/style.css" /> -->
+    <link rel="stylesheet" href="dist/css/final.css" />
     <title>Renaldi | Portfolio</title>
 
     <script>
-      // biar pas direfresh, status dark modenya tetep sesuai pilihan dan ga kereset (dokumentasi dark mode)
+      // biar pas direfresh, status dark modenya tetap sesuai pilihan dan ga kereset (read -> dokumentasi dark mode)
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
       } else {
@@ -20,13 +21,13 @@
     </script>
   </head>
 
-  <body class="dark:bg-black">
+  <body>
     <!-- Header -->
     <header class="absolute z-50 flex top-0 items-center w-full bg-transparent py-8 transition-all duration-500">
       <div class="container">
         <div class="relative flex items-center">
           <div class="px-4">
-            <a href="#home" class="text-3xl text-primaryIconColor font-medium">Ree</a>
+            <a href="#home" class="text-[31px] text-primaryIconColor dark:text-darkPrimaryIconColor font-medium">Ree</a>
           </div>
 
           <div class="absolute right-0 flex items-center px-4 lg:hidden">
@@ -37,7 +38,7 @@
             </button>
           </div>
 
-          <nav id="nav-menu" class="hidden absolute top-full right-0 bg-white dark:border-black border rounded-xl shadow-lg max-w-[250px] w-full py-3 lg:block lg:static lg:max-w-full lg:bg-transparent lg:border-none lg:shadow-none">
+          <nav id="nav-menu" class="hidden absolute top-full right-0 bg-white border rounded-xl shadow-md max-w-[250px] w-full py-3 dark:shadow-none lg:block lg:static lg:max-w-full lg:bg-transparent lg:border-none lg:shadow-none">
             <ul class="block lg:flex lg:justify-end">
               <li class="group py-3 lg:py-0">
                 <a href="#home" class="nav-list-item">Home</a>
@@ -46,14 +47,14 @@
                 <a href="#skills" class="nav-list-item">Skills</a>
               </li>
               <li class="group py-3 lg:py-0">
-                <a href="#portfolio" class="nav-list-item">Portfolio</a>
+                <a href="#project" class="nav-list-item">Portfolio</a>
               </li>
               <li class="group py-3 lg:py-0">
                 <a href="#education" class="nav-list-item">Education</a>
               </li>
-              <li class="group py-3 lg:py-0">
+              <!-- <li class="group py-3 lg:py-0">
                 <a href="#blog" class="nav-list-item">Blog</a>
-              </li>
+              </li> -->
               <li class="group py-3 lg:py-0">
                 <a href="#contact" class="nav-list-item">Contact</a>
               </li>
@@ -149,20 +150,22 @@
     <!-- END Header -->
 
     <!-- Hero -->
-    <section id="home" class="pt-36 lg:pt-44 lg:pb-16 xl:pt-52 bg-bgPrimary dark:bg-slate-900">
+    <section id="home" class="pt-24 lg:pt-44 lg:pb-16 xl:pt-52">
       <div class="container">
-        <div class="flex flex-wrap lg:flex-nowrap">
-          <div class="w-full self-center px-4 lg:w-1/2">
+        <div class="flex flex-wrap justify-center lg:flex-nowrap">
+          <div class="order-2 pb-14 sm:text-center lg:text-start self-center px-4 lg:-order-1 lg:w-1/2 lg:pb-0">
             <h3 class="text-base text-secondary dark:text-darkSecondary md:text-lg xl:text-xl" style="word-spacing: 5px">Hello, I'm</h3>
-            <h1 class="text-primary dark:text-darkPrimary text-4xl font-semibold my-1 xl:text-5xl">Muhammad <span class="text-primaryIconColor">Renaldi</span></h1>
+            <h1 class="text-primary dark:text-darkPrimary text-4xl font-bold my-1 xl:text-5xl">Muhammad <span class="text-primaryIconColor dark:text-darkPrimaryIconColor">Renaldi</span></h1>
             <h3 class="text-secondary dark:text-darkSecondary mb-9 lg:text-xl">Front-end & Back-end Programmer</h3>
+
             <p class="mb-8 text-secondary dark:text-darkSecondary leading-relaxed">I'm a graduate of Informatics Engineering from Darma Persada University</p>
 
-            <a href="#contact" class="btn px-8 py-3 rounded-full dark:text-black">Contact me</a>
+            <a href="#contact" class="btn px-16 lg:px-10 py-3 rounded-full">Contact me</a>
           </div>
 
-          <div class="w-full mt-14 mx-4 relative overflow-hidden lg:w-1/2 lg:mt-0 lg:right-0 flex lg:justify-end dark:brightness-[85%]">
-            <img src="./public/img/avatar1.png" alt="Renaldi" class="relative z-20 mx-auto max-w-[75%] lg:mx-10 xl:max-w-[70%]" />
+          <!-- img -->
+          <div class="relative flex w-full mb-14 mx-4 overflow-hidden lg:w-1/2 lg:mt-0 lg:mb-0 lg:right-0 lg:justify-end dark:brightness-[85%]">
+            <img src="./public/img/avatar1.png" alt="Renaldi" class="relative z-20 mx-auto max-w-[70%] sm:max-w-[300px] lg:mx-10 xl:max-w-[70%]" />
             <span class="absolute z-10 -bottom-32 left-[45%] -translate-x-1/2 rotate-[-170deg] md:scale-[1.3] lg:scale-[1.2] lg:left-[50%] xl:scale-[1.3]">
               <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -179,19 +182,19 @@
     <!-- END Hero -->
 
     <!-- Skills -->
-    <section id="skills" class="py-36 bg-bgSecondary dark:bg-bgDarkSecondary">
+    <section id="skills" class="py-36">
       <div class="container">
         <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
+          <div class="max-w-xl mx-auto text-center mb-14">
             <h4 class="first-title">Skills</h4>
-            <h2 class="second-title">Programing Skills</h2>
-            <p class="text-secondary dark:text-darkSecondary">Beberapa framework web development yang saya gunakan</p>
+            <h2 class="second-title">Specialized In</h2>
           </div>
         </div>
 
         <div class="w-full px-4 pt-10">
           <div class="flex flex-wrap items-center justify-center">
-            <div class="w-full p-4 lg:w-1/3">
+            <!-- skill 1 -->
+            <div class="w-full p-4 max-w-[450px] xl:w-1/3">
               <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
                 <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -208,47 +211,30 @@
                   </svg>
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">JavaScript</h3>
-                <div class="flex flex-wrap w-full items-center grayscale">
-                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center">
+                  <p class="text-secondary dark:text-darkSecondary">Kecenderungan saya dalam penggunaan JavaScript adalah pada sisi Front-End, saya juga menggunakan Vanilla JavaScript untuk pembuatan website ini</p>
                 </div>
               </div>
             </div>
-            <div class="w-full p-4 lg:w-1/3">
+            <!-- skill 2 -->
+            <div class="w-full p-4 max-w-[450px] xl:w-1/3">
               <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
                 <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
-                  <svg width="256px" height="256px" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg">
+                  <svg fill="#000000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <circle cx="16" cy="16" r="14"></circle>
-                      <path
-                        d="M14.4392 10H16.1192L15.6444 12.5242H17.154C17.9819 12.5419 18.5986 12.7269 19.0045 13.0793C19.4184 13.4316 19.5402 14.1014 19.3698 15.0881L18.5541 19.4889H16.8497L17.6288 15.2863C17.7099 14.8457 17.6856 14.533 17.5558 14.348C17.426 14.163 17.146 14.0705 16.7158 14.0705L15.3644 14.0573L14.3661 19.4889H12.6861L14.4392 10Z"
-                        fill="white"
-                      ></path>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M6.74092 12.5243H10.0036C10.9612 12.533 11.6552 12.8327 12.0854 13.4229C12.5156 14.0132 12.6576 14.8193 12.5115 15.8414C12.4548 16.3085 12.3289 16.7665 12.1341 17.2159C11.9474 17.6652 11.6878 18.0704 11.355 18.4317C10.9491 18.8898 10.5149 19.1805 10.0523 19.304C9.58969 19.4274 9.11076 19.489 8.61575 19.489H7.15484L6.69222 22H5L6.74092 12.5243ZM7.43485 17.9956L8.16287 14.0441H8.40879C8.49815 14.0441 8.5914 14.0396 8.6888 14.0309C9.33817 14.0221 9.87774 14.0882 10.308 14.2291C10.7462 14.37 10.8923 14.9031 10.7462 15.8282C10.5678 16.9296 10.2186 17.5727 9.69926 17.7577C9.1799 17.934 8.53053 18.0176 7.75138 18.0088H7.58094C7.53224 18.0088 7.48355 18.0043 7.43485 17.9956Z"
-                        fill="white"
-                      ></path>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M24.4365 12.5243H21.1738L19.4329 22H21.1251L21.5878 19.489H23.0487C23.5437 19.489 24.0226 19.4274 24.4852 19.304C24.9479 19.1805 25.382 18.8898 25.7879 18.4317C26.1207 18.0704 26.3803 17.6652 26.567 17.2159C26.7618 16.7665 26.8877 16.3085 26.9444 15.8414C27.0905 14.8193 26.9486 14.0132 26.5183 13.4229C26.0881 12.8327 25.3942 12.533 24.4365 12.5243ZM22.5958 14.0441L21.8678 17.9956C21.9165 18.0043 21.9652 18.0088 22.0139 18.0088H22.1843C22.9635 18.0176 23.6128 17.934 24.1322 17.7577C24.6515 17.5727 25.0007 16.9296 25.1792 15.8282C25.3253 14.9031 25.1792 14.37 24.7409 14.2291C24.3107 14.0882 23.7711 14.0221 23.1217 14.0309C23.0243 14.0396 22.9311 14.0441 22.8417 14.0441H22.5958Z"
-                        fill="white"
-                      ></path>
-                    </g>
+                    <g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" d="M10 12v8A10 10 0 0 1 8.17.17L10 2h5a5 5 0 0 1 5 4.99v9.02A4 4 0 0 1 16 20v-2a2 2 0 1 0 0-4h-4l-2-2zm5.5-3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></g>
                   </svg>
-                  <!-- <img src="./public/img/logo-php.png" alt="PHP" class="w-12 mx-auto"> -->
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">PHP</h3>
                 <p class="text-secondary dark:text-darkSecondary" style="word-spacing: 5px"></p>
-                <div class="flex flex-wrap w-full items-center justify-center grayscale">
-                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center justify-center">
+                  <p class="text-secondary dark:text-darkSecondary">PHP dengan framework Laravel menjadi bahasa server-side favorite saya pada saat ini, saya juga menggunakan Laravel pada pembuatan blog website saya</p>
                 </div>
               </div>
             </div>
-            <div class="w-full p-4 lg:w-1/3">
+            <!-- skill 3 -->
+            <div class="w-full p-4 max-w-[450px] xl:w-1/3">
               <div class="w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black">
                 <div class="flex w-16 h-16 mb-5 mx-auto items-center rounded-xl bg-bgThird">
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -263,11 +249,10 @@
                       </g>
                     </g>
                   </svg>
-                  <!-- <img src="./public/img/logo-css.png" alt="PHP" class="w-12 mx-auto"> -->
                 </div>
                 <h3 class="text-lg text-primary dark:text-darkPrimary font-medium mb-5">CSS</h3>
-                <div class="flex flex-wrap w-full items-center grayscale">
-                  <p class="text-secondary dark:text-darkSecondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate repellendus atque ipsam aut, praesentium veniam. Repudiandae suscipit quos et.</p>
+                <div class="flex flex-wrap w-full items-center">
+                  <p class="text-secondary dark:text-darkSecondary">CSS framework favorite saya adalah Tailwind CSS, saya menggunakan Tailwind untuk beberapa project latihan, dan untuk pembuatan website portfolio ini</p>
                 </div>
               </div>
             </div>
@@ -278,29 +263,32 @@
     <!-- END Skills -->
 
     <!-- Project -->
-    <section id="project" class="pt-36 pb-32 bg-bgPrimary dark:bg-bgDarkPrimary">
+    <section id="project" class="pt-36 pb-32">
       <div class="container">
         <div class="w-full px-4">
-          <div class="mx-auto text-center mb-16">
-            <h4 class="first-title">Project</h4>
-            <h2 class="second-title">Project Terbaru</h2>
+          <div class="text-start mb-14">
+            <h4 class="first-title-stripe">Portfolio</h4>
+            <h2 class="second-title">Latest Project</h2>
           </div>
         </div>
 
-        <div class="flex flex-wrap pt-10">
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <div class="project-img relative">
-                <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
+        <div class="flex flex-wrap justify-center pt-10">
+          <!-- Project 1 -->
+          <div class="w-full px-4 max-w-[450px] lg:w-1/2 xl:w-1/3">
+            <div class="project-card-wrapper">
+              <div class="project-img bg-gradient-to-br from-slate-100 to-slate-100">
+                <img src="./public/img/project/laravel-main.png" alt="Laravel Blog" class="horizontal-img brightness-110" />
+                <img src="./public/img/project/laravel-vertical5.png" alt="Laravel Blog" class="vertical-img brightness-110" />
                 <button onclick="pageReadBtn(projectLaravel)" class="view-images-btn">
                   <p class="text-white tracking-widest">View Images</p>
-                </butt>
+                </button>
               </div>
-              <div class="project-detail my-6 px-7 max-h-[300px] overflow-auto w-full">
+
+              <div class="project-detail">
                 <h3 class="card-title">Blog Website</h3>
-                <p class="text-base pb-3 text-pretty">Program ini dibuat menggunakan teknologi Back-End berbasis PHP Laravel, Framework UI dari Bootstrap, dan RDBMS menggunakan MySQL.</p>
-                <ul class="pt-5">
-                  <p class="font-semibold">Features:</p>
+                <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">Laravel | Bootstrap | MySQL</p>
+                <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">Features</h4>
+                <ul>
                   <li>Login Admin & Login Session</li>
                   <li>Dashboard Admin</li>
                   <li>Media Query, untuk mengelola gambar</li>
@@ -308,8 +296,8 @@
                   <li>Terintegrasi dengan Database</li>
                   <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
                 </ul>
-                <ul class="pt-5">
-                  <p class="font-semibold">Security:</p>
+                <h4 class="font-semibold pt-7 pb-3 text-primaryIconColor dark:text-darkPrimary">Security</h4>
+                <ul>
                   <li>Enkripsi password user</li>
                   <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
                   <li>
@@ -325,86 +313,86 @@
                   </div>
                   <div class="thumbnail-list absolute bottom-20 md:bottom-10 lg:bottom-5 right-1/2 translate-x-[50%] flex gap-5 h-24 w-max max-w-full p-3 bg-slate-200 border border-slate-300 shadow-md rounded-xl">
                     <div class="group">
-                      <img src="./public/img/project/laravel-blog.png" class="thumbnail-img">
+                      <img src="./public/img/project/laravel-blog.png" class="thumbnail-img" />
                     </div>
                     <div class="group">
-                      <img src="./public/img/project/laravel-categories.png" class="thumbnail-img">
+                      <img src="./public/img/project/laravel-categories.png" class="thumbnail-img" />
                     </div>
                     <div class="group">
-                      <img src="./public/img/project/laravel-dashboard.png" class="thumbnail-img">
+                      <img src="./public/img/project/laravel-dashboard.png" class="thumbnail-img" />
                     </div>
                   </div>
-                  <button class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-slate-300 text-slate-500 hover:bg-slate-800 hover:text-white text-2xl cursor-pointer transition-all duration-300 ease-in-out sm:-translate-x-1 lg:left-auto lg:right-14 lg:rounded-full  xl:right-16"
-                  onclick="pageCloseBtn(projectLaravel)"><p>X</p> 
+                  <button
+                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-slate-300 text-slate-500 hover:bg-slate-800 hover:text-white text-2xl cursor-pointer transition-all duration-300 ease-in-out sm:-translate-x-1 lg:left-auto lg:right-14 lg:rounded-full xl:right-16"
+                    onclick="pageCloseBtn(projectLaravel)"
+                  >
+                    <p>X</p>
                   </button>
                 </div>
                 <!-- END Project view images 1 -->
               </div>
             </div>
           </div>
+          <!-- END Project 1 -->
 
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
-              <div class="project-detail my-6 px-7 h-[300px] overflow-auto">
-                <h3 class="card-title">Blog Website</h3>
-                <p class="text-base pb-3" maxlength="5">Program ini dibuat menggunakan teknologi Back-End berbasis Laravel, dan Framework UI dari Bootstrap.</p>
-                <ul class="pt-5">
-                  <p class="font-semibold">Fitur:</p>
-                  <li>Login Admin & Login Session</li>
-                  <li>Dashboard Admin</li>
-                  <li>Media Query, untuk mengelola gambar</li>
-                  <li>Text editor dari Trix, untuk mengelola konten blog post</li>
-                  <li>Terintegrasi dengan Database</li>
-                  <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
-                </ul>
-                <ul class="pt-5">
-                  <p class="font-semibold">Keamanan:</p>
-                  <li>Enkripsi password user</li>
-                  <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
-                  <li>
-                    Security untuk mencegah <span>Cross Site Request Forgery Attack</span> dan <span>XSS Attack</span> menggunakan fitur Laravel <span>@csrf</span> dan <span>htmlspecialchars()</span> yang terintegrasi dalam echo statement
-                    milik Blade
-                  </li>
-                </ul>
+          <!-- Project 2 -->
+          <div class="w-full px-4 max-w-[450px] lg:w-1/2 xl:w-1/3">
+            <div class="project-card-wrapper">
+              <div class="project-img bg-gradient-to-br from-slate-100/75 to-slate-100/75">
+                <img src="./public/img/project/tic-tac-toe.png" alt="Tic Tac Toe Game" class="horizontal-img" />
+                <img src="./public/img/project/tic tac toe-vertical.png" alt="Tic Tac Toe Game" class="vertical-img" />
+                <a href="https://reenall.github.io/tic-tac-toe/" target="blank" class="view-images-btn">
+                  <p class="text-white tracking-widest">Visit Website</p>
+                </a>
+              </div>
+              <div class="project-detail text-pretty">
+                <h3 class="card-title">Game Tic Tac Toe</h3>
+                <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</p>
+
+                <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">About</h4>
+                <p class="mb-5">
+                  Algoritma permainan ini adalah, jika di antara player X dan O ada yang telah memenuhi 3 kolom dengan sejajar secara vertical, horizontal, ataupun diagonal tanpa terputus, maka ia dinyatakan sebagai pemenang dan permainan
+                  dihentikan.
+                </p>
+                <p>Program ini juga memiliki fitur Time Travel yang dapat mengembalikan permainan ke keadaan sebelumnya untuk mengulang langkah permainan.</p>
               </div>
             </div>
           </div>
+          <!-- END Project 2 -->
 
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white text-secondary dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <img src="./public/img/project/laravel-blog.png" alt="Laravel Blog" />
-              <div class="project-detail my-6 px-7 max-h-[300px] overflow-auto">
-                <h3 class="card-title">Blog Website</h3>
-                <p class="text-base pb-3" maxlength="5">Program ini dibuat menggunakan teknologi Back-End berbasis Laravel, dan Framework UI dari Bootstrap.</p>
-                <ul class="pt-5">
-                  <p class="font-semibold">Fitur:</p>
-                  <li>Login Admin & Login Session</li>
-                  <li>Dashboard Admin</li>
-                  <li>Media Query, untuk mengelola gambar</li>
-                  <li>Text editor dari Trix, untuk mengelola konten blog post</li>
-                  <li>Terintegrasi dengan Database</li>
-                  <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
-                </ul>
-                <ul class="pt-5">
-                  <p class="font-semibold">Keamanan:</p>
-                  <li>Enkripsi password user</li>
-                  <li>Regenerate Session saat otentikasi login, untuk menghindari <span>Session Fixation Attack</span></li>
-                  <li>
-                    Security untuk mencegah <span>Cross Site Request Forgery Attack</span> dan <span>XSS Attack</span> menggunakan fitur Laravel <span>@csrf</span> dan <span>htmlspecialchars()</span> yang terintegrasi dalam echo statement
-                    milik Blade
-                  </li>
-                </ul>
+          <!-- Project 3 -->
+          <div class="w-full px-4 max-w-[450px] lg:w-1/2 xl:w-1/3">
+            <div class="project-card-wrapper">
+              <div class="project-img bg-gradient-to-br from-slate-100 to-slate-100">
+                <img src="./public/img/project/movies-web-api2.png" alt="Movies Web Api" class="horizontal-img" />
+                <img src="./public/img/project/movies-web-vertical4.png" alt="Movies Web Api" class="vertical-img" />
+                <a href="https://reenall.github.io/movies-web-api/" target="blank" class="view-images-btn">
+                  <p class="text-white tracking-widest">Visit Website</p>
+                </a>
+              </div>
+              <div class="project-detail">
+                <h3 class="card-title">Movie Search - API</h3>
+                <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</p>
+
+                <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">About</h4>
+                <p>
+                  Program ini dibuat menggunakan layanan open-source API dari
+                  <a href="https://www.themoviedb.org/" target="blank" class="hover:text-blue-400">TMDB.</a>
+                  Dari layanan tersebut, program ini menggunakan data film seperti judul, rating, poster, dan tahun terbit film.
+
+                  <!-- Dari layanan tersebut, users dapat menggunakan data film secara gratis seperti judul film, rating, poster, tahun terbit, ringkasan cerita, dan lain-lain. -->
+                </p>
               </div>
             </div>
           </div>
+          <!-- END Project 3 -->
         </div>
       </div>
     </section>
     <!-- END Project -->
 
     <!-- Learning Path -->
-    <section id="education" class="pt-36 pb-32 bg-gradient-to-r bg-bgSecondary dark:bg-bgDarkSecondary">
+    <section id="education" class="pt-36 pb-32">
       <div class="container">
         <div class="w-full px-4 mb-16">
           <div class="max-w-xl text-start">
@@ -432,25 +420,25 @@
 
           <div class="w-full pb-20 lg:pb-0 lg:w-1/2 text-secondary dark:text-darkSecondary">
             <p class="leading-7 text-pretty">
-              Selain di pendidikan formal, selama 8 bulan terakhir saya juga terus mempelajari materi-materi pemrograman melalui pembelajaran online untuk mengembangkan programming skill saya. Berikut adalah
-              daftar skills teknologi pemrograman yang saya miliki
+              Selain di pendidikan formal, dalam 8 bulan terakhir saya juga terus mempelajari materi-materi pemrograman melalui pembelajaran online untuk mengembangkan kemampuan pemrograman saya. Berikut adalah daftar teknologi pemrograman
+              yang saya pelajari
             </p>
 
             <div class="flex flex-wrap pt-7">
               <ul class="w-1/2">
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>JavaScript</li>
-                <li>Node.Js</li>
-                <li>React.Js</li>
+                <li><img src="./public/img/education/js3.png" alt="js logo" />JavaScript</li>
+                <li><img src="./public/img/education/nodejs1.png" alt="nodejs logo" />Node JS</li>
+                <li><img src="./public/img/education/react1.png" alt="react logo" />React JS</li>
+                <li><img src="./public/img/education/git1.png" alt="git1 logo" />Git</li>
+                <li><img src="./public/img/education/mysql1.png" alt="mysql logo" />MySQL</li>
               </ul>
 
               <ul class="w-1/2">
-                <li>CSS</li>
-                <li>Tailwind Css</li>
-                <li>Bootstrap</li>
-                <li>MySQL</li>
-                <li>Git</li>
+                <li><img src="./public/img/education/php6.png" alt="php logo" />PHP</li>
+                <li><img src="./public/img/education/laravel1.png" alt="laravel logo" />Laravel</li>
+                <li><img src="./public/img/education/css1.png" alt="css logo" />CSS</li>
+                <li><img src="./public/img/education/tailwind1.png" alt="tailwind logo" />Tailwind CSS</li>
+                <li><img src="./public/img/education/bootstrap1.png" alt="bootstrap logo" />Bootstrap</li>
               </ul>
             </div>
           </div>
@@ -460,7 +448,7 @@
     <!-- END Learning Path -->
 
     <!-- Blog -->
-    <section id="blog" class="pt-36 pb-32 bg-bgPrimary dark:bg-bgDarkPrimary">
+    <!-- <section id="blog" class="pt-36 pb-32">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
@@ -476,10 +464,10 @@
               <div class="py-6 px-7">
                 <h3 class="card-title">Judul pertama</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog1)">Read more..</button>
+                <button class="card-button" onclick="pageReadBtn(blog1)">Read more..</button> -->
 
-                <!-- Blog Read More 1 -->
-                <div class="blog-page-1 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+    <!-- Blog Read More 1 -->
+    <!-- <div class="blog-page-1 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
                   <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
                     <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] lg:max-w-[85%]">
                       <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
@@ -501,9 +489,9 @@
                   >
                     X
                   </div>
-                </div>
-                <!-- END Blog Read More 1 -->
-              </div>
+                </div> -->
+    <!-- END Blog Read More 1 -->
+    <!-- </div>
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
@@ -512,10 +500,10 @@
               <div class="py-6 px-7">
                 <h3 class="card-title">Judul kedua</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog2)">Read more..</button>
+                <button class="card-button" onclick="pageReadBtn(blog2)">Read more..</button> -->
 
-                <!-- Blog Read More 2 -->
-                <div class="blog-page-2 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+    <!-- Blog Read More 2 -->
+    <!-- <div class="blog-page-2 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
                   <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
                     <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
                       <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
@@ -534,9 +522,9 @@
                   >
                     X
                   </div>
-                </div>
-                <!-- END Blog Read More 2 -->
-              </div>
+                </div> -->
+    <!-- END Blog Read More 2 -->
+    <!-- </div>
             </div>
           </div>
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
@@ -545,10 +533,10 @@
               <div class="py-6 px-7">
                 <h3 class="card-title">Judul Ketiga</h3>
                 <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog3)">Read more..</button>
+                <button class="card-button" onclick="pageReadBtn(blog3)">Read more..</button> -->
 
-                <!-- Blog Read More 3 -->
-                <div class="blog-page-3 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
+    <!-- Blog Read More 3 -->
+    <!-- <div class="blog-page-3 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
                   <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
                     <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
                       <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
@@ -567,28 +555,28 @@
                   >
                     X
                   </div>
-                </div>
-                <!-- END Blog Read More 3 -->
-              </div>
+                </div> -->
+    <!-- END Blog Read More 3 -->
+    <!-- </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- END Blog -->
 
     <!-- Contact -->
-    <section id="contact" class="py-36 bg-bgSecondary dark:bg-bgDarkSecondary">
+    <section id="contact" class="py-36">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl text-start mb-16">
             <h4 class="first-title-stripe">Contact</h4>
-            <h2 class="second-title">Feel free to text me!</h2>
+            <h2 class="second-title">Feel free to mail me!</h2>
           </div>
         </div>
 
         <div class="flex flex-wrap px-4">
-          <!-- Contact left -->
+          <!-- Left Contact -->
           <div class="w-full pb-20 lg:pb-0 lg:w-1/2">
             <form action="https://formspree.io/f/meqyzklr" method="post">
               <div class="w-full mx-auto text-sm">
@@ -598,7 +586,7 @@
                     id="name"
                     name="name"
                     placeholder="name"
-                    class="w-full p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500"
+                    class="w-full p-3 bg-white dark:border-black drop-shadow-mdCustom dark:drop-shadow-none text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-200 dark:bg-slate-800 dark:focus:ring-1 dark:focus:ring-slate-700"
                   />
                 </div>
                 <div class="mb-8">
@@ -607,53 +595,95 @@
                     id="email"
                     name="email"
                     placeholder="email *"
-                    class="w-full p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500"
+                    class="w-full p-3 bg-white dark:border-black drop-shadow-mdCustom dark:drop-shadow-none text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-200 dark:bg-slate-800 dark:focus:ring-1 dark:focus:ring-slate-700"
                     required
                   />
                 </div>
-                <div class="mb-8">
+                <div class="mb-10">
                   <textarea
                     type="text"
                     id="message"
                     name="message"
-                    placeholder="Hi, let's go to the coffee shop and talk about anything ☕"
-                    class="w-full h-32 p-3 bg-white dark:bg-slate-100 dark:border-black border text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500 resize-none"
+                    placeholder="Hi re.. let's go to the coffee shop and talk about anything ☕"
+                    class="w-full h-32 p-3 bg-white dark:border-black drop-shadow-mdCustom dark:drop-shadow-none text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-200 resize-none dark:bg-slate-800 dark:focus:ring-1 dark:focus:ring-slate-700"
                   ></textarea>
                 </div>
 
                 <div>
-                  <button type="submit" class="btn w-full py-3 rounded-full shadow-lg" onclick="return confirm('Want to send this message?')">Send message</button>
+                  <button type="submit" class="btn w-full md:w-3/5 py-2 rounded-full shadow-lg dark:shadow-none" onclick="return confirm('Want to send this message?')">Send message</button>
                 </div>
               </div>
             </form>
           </div>
 
-          <!-- Contact Right -->
-          <div class="w-full pb-20 lg:pb-0 lg:w-1/2 flex mx-auto justify-center">
+          <!-- Right Contact -->
+          <div class="w-full lg:w-1/2 flex mx-auto justify-center">
             <div>
-              <h3 class="right-contact-title relative pl-[40px] text-primaryIconColor before:bg-primaryIconColor mb-10 font-medium">Or directly through my main contact</h3>
+              <h3 class="right-contact-title relative pl-[40px] text-primaryIconColor before:bg-primaryIconColor mb-10 font-medium dark:text-darkPrimaryIconColor dark:before:bg-darkPrimaryIconColor">Or directly through my main contact</h3>
+              <!-- Contact 1 -->
               <div class="flex gap-8 pb-10">
-                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center">
-                  <svg class="pl-1" width="28" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                    <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
+                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center drop-shadow-mdCustom dark:drop-shadow-none">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g id="style=stroke">
+                        <g id="email">
+                          <path
+                            id="vector (Stroke)"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M3.88534 5.2371C3.20538 5.86848 2.75 6.89295 2.75 8.5V15.5C2.75 17.107 3.20538 18.1315 3.88534 18.7629C4.57535 19.4036 5.61497 19.75 7 19.75H17C18.385 19.75 19.4246 19.4036 20.1147 18.7629C20.7946 18.1315 21.25 17.107 21.25 15.5V8.5C21.25 6.89295 20.7946 5.86848 20.1147 5.2371C19.4246 4.59637 18.385 4.25 17 4.25H7C5.61497 4.25 4.57535 4.59637 3.88534 5.2371ZM2.86466 4.1379C3.92465 3.15363 5.38503 2.75 7 2.75H17C18.615 2.75 20.0754 3.15363 21.1353 4.1379C22.2054 5.13152 22.75 6.60705 22.75 8.5V15.5C22.75 17.393 22.2054 18.8685 21.1353 19.8621C20.0754 20.8464 18.615 21.25 17 21.25H7C5.38503 21.25 3.92465 20.8464 2.86466 19.8621C1.79462 18.8685 1.25 17.393 1.25 15.5V8.5C1.25 6.60705 1.79462 5.13152 2.86466 4.1379Z"
+                          ></path>
+                          <path
+                            id="vector (Stroke)_2"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.3633 7.31026C19.6166 7.63802 19.5562 8.10904 19.2285 8.3623L13.6814 12.6486C12.691 13.4138 11.3089 13.4138 10.3185 12.6486L4.77144 8.3623C4.44367 8.10904 4.38328 7.63802 4.63655 7.31026C4.88982 6.98249 5.36083 6.9221 5.6886 7.17537L11.2356 11.4616C11.6858 11.8095 12.3141 11.8095 12.7642 11.4616L18.3113 7.17537C18.6391 6.9221 19.1101 6.98249 19.3633 7.31026Z"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
                   </svg>
+                  <!-- <svg class="pl-1" width="28" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M24 21h-24v-18h24v18zm-23-16.477v15.477h22v-15.477l-10.999 10-11.001-10zm21.089-.523h-20.176l10.088 9.171 10.088-9.171z" />
+                  </svg> -->
                 </div>
                 <div class="grid items-center">
-                  <h3 class="font-medium text-primary dark:text-darkPrimary">Email</h3>
+                  <h3 class="font-medium text-secondary dark:text-darkPrimary">Email</h3>
                   <p class="text-sm text-secondary dark:text-darkSecondary">muhammadrenaldi588@gmail.com</p>
                 </div>
               </div>
-
+              <!-- Contact 2 -->
               <div class="flex flex-wrap gap-8">
-                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center">
-                  <svg class="pl-1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <div class="w-14 h-14 bg-bgThird rounded-xl flex items-center justify-center drop-shadow-mdCustom dark:drop-shadow-none">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.7177 3.0919C5.94388 1.80096 7.9721 2.04283 8.98569 3.47641L10.2467 5.25989C11.0574 6.40656 10.9889 8.00073 10.0214 9.0194L9.7765 9.27719C9.77582 9.27897 9.7751 9.2809 9.77436 9.28299C9.76142 9.31935 9.7287 9.43513 9.7609 9.65489C9.82765 10.1104 10.1793 11.0361 11.607 12.5392C13.0391 14.0469 13.9078 14.4023 14.3103 14.4677C14.484 14.4959 14.5748 14.4714 14.6038 14.4612L15.0124 14.031C15.8862 13.111 17.2485 12.9298 18.347 13.5621L20.2575 14.6617C21.8904 15.6016 22.2705 17.9008 20.9655 19.2747L19.545 20.7703C19.1016 21.2371 18.497 21.6355 17.75 21.7092C15.9261 21.8893 11.701 21.6548 7.27161 16.9915C3.13844 12.64 2.35326 8.85513 2.25401 7.00591L2.92011 6.97016L2.25401 7.00591C2.20497 6.09224 2.61224 5.30855 3.1481 4.7444L4.7177 3.0919ZM7.7609 4.34237C7.24855 3.61773 6.32812 3.57449 5.80528 4.12493L4.23568 5.77743C3.90429 6.12632 3.73042 6.52621 3.75185 6.92552C3.83289 8.43533 4.48307 11.8776 8.35919 15.9584C12.4234 20.2373 16.1676 20.3581 17.6026 20.2165C17.8864 20.1885 18.1783 20.031 18.4574 19.7373L19.8779 18.2417C20.4907 17.5965 20.3301 16.4342 19.5092 15.9618L17.5987 14.8621C17.086 14.567 16.4854 14.6582 16.1 15.064L15.6445 15.5435L15.1174 15.0428C15.6445 15.5435 15.6438 15.5442 15.6432 15.545L15.6417 15.5464L15.6388 15.5495L15.6324 15.556L15.6181 15.5701C15.6078 15.5801 15.5959 15.591 15.5825 15.6028C15.5556 15.6264 15.5223 15.6533 15.4824 15.6816C15.4022 15.7384 15.2955 15.8009 15.1606 15.8541C14.8846 15.963 14.5201 16.0214 14.0699 15.9483C13.1923 15.8058 12.0422 15.1755 10.5194 13.5722C8.99202 11.9642 8.40746 10.7645 8.27675 9.87234C8.21022 9.41827 8.26346 9.05468 8.36116 8.78011C8.40921 8.64508 8.46594 8.53742 8.51826 8.45566C8.54435 8.41489 8.56922 8.38075 8.5912 8.35298C8.60219 8.33909 8.61246 8.32678 8.62182 8.31603L8.63514 8.30104L8.64125 8.29441L8.64415 8.2913L8.64556 8.2898C8.64625 8.28907 8.64694 8.28835 9.17861 8.79333L8.64695 8.28834L8.93376 7.98637C9.3793 7.51731 9.44403 6.72292 9.02189 6.12586L7.7609 4.34237Z"
+                      ></path>
+                      <path
+                        d="M13.2595 1.87983C13.3257 1.47094 13.7122 1.19357 14.1211 1.25976C14.1464 1.26461 14.2279 1.27983 14.2705 1.28933C14.3559 1.30834 14.4749 1.33759 14.6233 1.38082C14.9201 1.46726 15.3347 1.60967 15.8323 1.8378C16.8286 2.29456 18.1544 3.09356 19.5302 4.46936C20.906 5.84516 21.705 7.17097 22.1617 8.16725C22.3899 8.66487 22.5323 9.07947 22.6187 9.37625C22.6619 9.52466 22.6912 9.64369 22.7102 9.72901C22.7197 9.77168 22.7267 9.80594 22.7315 9.83125L22.7373 9.86245C22.8034 10.2713 22.5286 10.6739 22.1197 10.7401C21.712 10.8061 21.3279 10.53 21.2601 10.1231C21.258 10.1121 21.2522 10.0828 21.2461 10.0551C21.2337 9.9997 21.2124 9.91188 21.1786 9.79572C21.1109 9.56339 20.9934 9.21806 20.7982 8.79238C20.4084 7.94207 19.7074 6.76789 18.4695 5.53002C17.2317 4.29216 16.0575 3.59117 15.2072 3.20134C14.7815 3.00618 14.4362 2.88865 14.2038 2.82097C14.0877 2.78714 13.9417 2.75363 13.8863 2.7413C13.4793 2.67347 13.1935 2.28755 13.2595 1.87983Z"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13.4861 5.32931C13.5999 4.93103 14.015 4.70041 14.4133 4.81421L14.2072 5.53535C14.4133 4.81421 14.4136 4.81431 14.414 4.81441L14.4147 4.81462L14.4162 4.81506L14.4196 4.81604L14.4273 4.81835L14.4471 4.82451C14.4622 4.82934 14.481 4.83562 14.5035 4.84358C14.5484 4.85952 14.6077 4.88218 14.6805 4.91339C14.8262 4.97582 15.0253 5.07224 15.2698 5.21695C15.7593 5.50664 16.4275 5.98781 17.2124 6.77279C17.9974 7.55776 18.4786 8.22595 18.7683 8.71541C18.913 8.95992 19.0094 9.15899 19.0718 9.30467C19.103 9.37748 19.1257 9.43683 19.1416 9.48175C19.1496 9.5042 19.1559 9.52303 19.1607 9.5381L19.1669 9.55789L19.1692 9.56564L19.1702 9.56898L19.1706 9.57051L19.1708 9.57124C19.1709 9.5716 19.171 9.57195 18.4499 9.77799L19.171 9.57195C19.2848 9.97023 19.0542 10.3853 18.6559 10.4991C18.261 10.612 17.8496 10.3862 17.7317 9.99414L17.728 9.98336C17.7227 9.96833 17.7116 9.93875 17.6931 9.89555C17.6561 9.80921 17.589 9.66798 17.4774 9.47939C17.2544 9.10265 16.8517 8.5334 16.1518 7.83345C15.4518 7.13349 14.8826 6.73079 14.5058 6.50782C14.3172 6.3962 14.176 6.32911 14.0897 6.2921C14.0465 6.27359 14.0169 6.26256 14.0019 6.25722L13.9911 6.25353C13.599 6.13565 13.3733 5.7242 13.4861 5.32931Z"
+                      ></path>
+                    </g>
+                  </svg>
+                  <!-- <svg class="pl-1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path
                       d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
                     />
-                  </svg>
+                  </svg> -->
                 </div>
                 <div class="grid items-center">
-                  <h3 class="font-medium text-primary dark:text-darkPrimary">Whatsapp</h3>
+                  <h3 class="font-medium text-secondary dark:text-darkPrimary">Whatsapp</h3>
                   <p class="text-sm text-secondary dark:text-darkSecondary">(+62) 815-1060-4262</p>
                 </div>
               </div>
@@ -665,27 +695,23 @@
     <!-- END contact -->
 
     <!-- Footer -->
-    <footer class="py-20 bg-bgPrimary dark:bg-bgDarkPrimary">
+    <footer class="py-28 md:py-20 bg-bgSecondary dark:bg-bgDarkSecondary">
       <div class="container">
-        <div class="flex flex-wrap justify-center items-center pb-5 w-full text-center px-4">
-          <h2 class="w-full mx-auto pb-10 font-medium text-xl text-primaryIconColor" style="word-spacing: 3px">This website was created using</h2>
-          <div class="grid gap-10 pb-10 md:flex md:flex-wrap justify-center items-center">
+        <div class="flex flex-wrap justify-center items-center w-full text-center px-4 mx-auto xl:justify-around">
+          <h2 class="footer-title px-5 mx-auto mb-10 xl:mb-0 text-xl text-primaryIconColor xl:mx-0">This website was created using</h2>
+          <div class="grid gap-10 md:flex md:flex-wrap justify-center items-center xl:mx-0">
             <a href="https://tailwindcss.com/" target="_blank">
-              <img src="./public/img/tailwind.png" alt="tailwindcss" />
+              <img src="./public/img/footer/tailwind1.png" alt="tailwindcss" />
+              <span class="text-img">tailwindcss</span>
             </a>
             <a href="https://javascript.com/" target="_blank">
-              <img src="./public/img/javascript.png" alt="javascript" />
+              <img src="./public/img/footer/js3.png" alt="javascript" />
+              <span class="text-img">JavaScript</span>
             </a>
             <a href="https://formspree.io/" target="_blank">
-              <img src="./public/img/formspree.png" alt="formspree" />
+              <img src="./public/img/footer/formspree1.png" alt="formspree" />
+              <span class="text-img">Formspree</span>
             </a>
-          </div>
-        </div>
-
-        <div class="border-t border-slate-300 dark:border-darkSecondary dark:text-darkSecondary">
-          <div class="justify-center text-center pt-10 px-4 text-sm">
-            <p class="text-secondary">Thank you for reading up to here!</p>
-            <p class="text-primaryIconColor font-medium">Created by Renaldi</p>
           </div>
         </div>
       </div>
@@ -693,8 +719,8 @@
     <!-- END footer -->
 
     <!-- Back to top -->
-    <a href="#home" id="back-top" class="fixed hidden z-50 items-center justify-center bottom-5 right-5 w-12 h-12 rounded-full bg-primaryIconColor transition-all duration-300 animate-bounce hover:bg-indigo-400 lg:bottom-10 lg:right-10">
-      <span class="block mt-1 w-4 h-4 border-l-2 border-t-2 rotate-45 border-slate-100"></span>
+    <a href="#home" id="back-top" class="btn fixed hidden z-50 items-center justify-center bottom-5 right-5 w-12 h-12 rounded-full animate-bounce lg:bottom-10 lg:right-10">
+      <span class="block mt-1 w-4 h-4 border-l-2 border-t-2 rotate-45 border-slate-100 dark:border-slate-900"></span>
     </a>
     <!-- END back to top -->
 

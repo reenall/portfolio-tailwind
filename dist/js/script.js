@@ -39,7 +39,7 @@ darkToggle.addEventListener('click', () => {
    darkToggle.classList.toggle('dark-toggle-animate');
    html.classList.toggle('dark');
 
-   // biar pas direfresh, status dark modenya tetep sesuai pilihan dan ga kereset - (dokumentasi dark mode)
+   // biar pas direfresh, status dark modenya tetap sesuai pilihan dan ga kereset - (read -> dokumentasi dark mode)
    (html.classList.contains('dark')) ? localStorage.theme = 'dark' : localStorage.theme = 'light';
 })
 
