@@ -31,10 +31,10 @@ module.exports = {
       },
       dropShadow: {
         mdCustom: "0 2px 2px #dbeafe",
-        portfolioImg: "7px 8px 2px rgb(0 0 0 / 0.2)",
       },
       boxShadow: {
         lg: ["0 9px 15px -3px #e2e8f0", "0 4px 6px -4px #e2e8f0"],
+        portfolioImg: "7px 8px 4px 0px rgb(0 0 0 / 0.2)",
       },
       letterSpacing: {
         titleSpacing: "6px",
