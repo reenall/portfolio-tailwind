@@ -51,9 +51,6 @@
               <li class="group py-3 lg:py-0">
                 <a href="#education" class="nav-list-item">Education</a>
               </li>
-              <!-- <li class="group py-3 lg:py-0">
-                <a href="#blog" class="nav-list-item">Blog</a>
-              </li> -->
               <li class="group py-3 lg:py-0">
                 <a href="#contact" class="nav-list-item">Contact</a>
               </li>
@@ -141,6 +138,7 @@
                   </div>
                 </div>
               </li>
+              <!-- END dark mode -->
             </ul>
           </nav>
         </div>
@@ -153,11 +151,15 @@
       <div class="container">
         <div class="flex flex-wrap justify-center lg:flex-nowrap">
           <div class="order-2 pb-14 sm:text-center lg:text-start self-center px-4 lg:-order-1 lg:w-1/2 lg:pb-0">
-            <h3 class="text-base text-secondary dark:text-darkSecondary md:text-lg xl:text-xl" style="word-spacing: 5px">Hello, I'm</h3>
-            <h1 class="text-primary dark:text-darkPrimary text-4xl font-bold my-1 xl:text-5xl">Muhammad <span class="text-primaryIconColor dark:text-darkPrimaryIconColor">Renaldi</span></h1>
-            <h3 class="text-secondary dark:text-darkSecondary mb-9 lg:text-xl">I'm into Front end & Back end web programming</h3>
+            <h3 class="text-base text-secondary dark:text-darkSecondary md:text-lg xl:text-xl" style="word-spacing: 5px"><span class="font-semibold">Hello, I'm</span></h3>
+            <h1 class="text-primaryIconColor dark:text-darkPrimary text-4xl font-bold my-1 xl:text-5xl">Muhammad Renaldi</h1>
+            <!-- <h3 class="text-secondary dark:text-darkSecondary mb-9 lg:text-xl">I'm into Front end & Back end web programming</h3>
 
-            <p class="mb-8 text-secondary dark:text-darkSecondary leading-relaxed">And a fresh graduate of Informatics Engineering from Darma Persada University</p>
+            <p class="mb-8 text-secondary dark:text-darkSecondary leading-relaxed">And a fresh graduate of Informatics Engineering from Darma Persada University</p> -->
+
+            <p class="mb-9 text-secondary dark:text-darkSecondary leading-relaxed lg:text-lg">A graduate of Informatics Engineering from Darma Persada University</p>
+
+            <h3 class="mb-8 text-secondary dark:text-darkSecondary">I'm into Front end & <span class="font-semibold">Back end web programming</span></h3>
 
             <a href="#contact" class="btn px-16 lg:px-10 py-3 rounded-full">Contact me</a>
           </div>
@@ -284,13 +286,13 @@
               </div>
 
               <div class="project-detail">
-                <h3 class="card-title">Blog Website</h3>
+                <h3 class="card-title hover:cursor-pointer hover:text-[#92bba6]" onclick="pageReadBtn(projectLaravel)">Blog Website</h3>
                 <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">Laravel | Bootstrap | MySQL</p>
                 <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">Features</h4>
                 <ul>
-                  <li>Login Admin & Login Session</li>
+                  <li>Login Admin</li>
                   <li>Dashboard Admin</li>
-                  <li>Media Query, untuk mengelola gambar</li>
+                  <li>Media query, untuk mengelola gambar</li>
                   <li>Text editor dari Trix, untuk mengelola konten blog post</li>
                   <li>Terintegrasi dengan Database</li>
                   <li>Optimasi code saat query ke Database untuk menghindari <span>N+1 Problem</span>, menggunakan <span>Eager Load</span> & <span>Lazy Eager Load</span> dari Laravel</li>
@@ -338,23 +340,21 @@
           <div class="w-full px-4 max-w-[450px] lg:w-1/2 xl:w-1/3">
             <div class="project-card-wrapper">
               <div class="project-img bg-gradient-to-br from-slate-100 to-slate-100">
-                <img src="./public/img/project/movies-web-api2.png" alt="Movies Web Api" class="horizontal-img" />
-                <img src="./public/img/project/movies-web-vertical4.png" alt="Movies Web Api" class="vertical-img" />
-                <a href="https://reenall.github.io/movies-web-api/" target="blank" class="view-images-btn">
+                <img src="./public/img/project/movies-omdb-1.png" alt="Movies Web Api" class="horizontal-img" />
+                <img src="./public/img/project/movies-omdb-vertical-1.png" alt="Movies Web Api" class="vertical-img" />
+                <a href="https://reenall.github.io/movies-omdb/" target="blank" class="view-images-btn">
                   <p class="text-white tracking-widest">Visit Website</p>
                 </a>
               </div>
               <div class="project-detail">
-                <h3 class="card-title">Movie Search - API</h3>
-                <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</p>
+                <h3 class="card-title"><a href="https://reenall.github.io/movies-omdb/" class="hover:text-[#92bba6]" target="_blank">Movies Web - API</a></h3>
+                <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">jQuery | Tailwind CSS</p>
 
                 <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">About</h4>
                 <p>
                   Program ini dibuat menggunakan layanan open-source API dari
-                  <a href="https://www.themoviedb.org/" target="blank" class="hover:text-blue-400">TMDB.</a>
-                  Dari layanan tersebut, program ini menggunakan data film seperti judul, rating, poster, dan tahun terbit film.
-
-                  <!-- Dari layanan tersebut, users dapat menggunakan data film secara gratis seperti judul film, rating, poster, tahun terbit, ringkasan cerita, dan lain-lain. -->
+                  <a href="https://omdbapi.com/" target="blank" class="hover:text-blue-400">OMDb.</a>
+                  Program ini menggunakan data film seperti judul, poster, plot, penulis, dan data film lainnya dari layanan tersebut.
                 </p>
               </div>
             </div>
@@ -365,14 +365,14 @@
           <div class="w-full px-4 max-w-[450px] lg:w-1/2 xl:w-1/3">
             <div class="project-card-wrapper">
               <div class="project-img bg-gradient-to-br from-slate-100/75 to-slate-100/75">
-                <img src="./public/img/project/tic-tac-toe.png" alt="Tic Tac Toe Game" class="horizontal-img brightness-[105%] dark:brightness-100" />
+                <img src="./public/img/project/tic-tac-toe2.png" alt="Tic Tac Toe Game" class="horizontal-img brightness-[105%] dark:brightness-100" />
                 <img src="./public/img/project/tic tac toe-vertical.png" alt="Tic Tac Toe Game" class="vertical-img brightness-[105%] dark:brightness-100" />
                 <a href="https://reenall.github.io/tic-tac-toe/" target="blank" class="view-images-btn">
                   <p class="text-white tracking-widest">Visit Website</p>
                 </a>
               </div>
               <div class="project-detail text-pretty">
-                <h3 class="card-title">Game Tic Tac Toe</h3>
+                <h3 class="card-title"><a href="https://reenall.github.io/tic-tac-toe/" class="hover:text-[#92bba6]" target="_blank">Game Tic Tac Toe</a></h3>
                 <p class="text-base pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</p>
 
                 <h4 class="font-semibold pt-5 pb-3 text-primaryIconColor dark:text-darkPrimary">About</h4>
@@ -445,124 +445,6 @@
       </div>
     </section>
     <!-- END Learning Path -->
-
-    <!-- Blog -->
-    <!-- <section id="blog" class="pt-36 pb-32">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="mx-auto text-center mb-16">
-            <h4 class="first-title">Blog</h4>
-            <h2 class="second-title">My little blog</h2>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap pt-10">
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <img src="./public/img/cafe1.png" alt="" />
-              <div class="py-6 px-7">
-                <h3 class="card-title">Judul pertama</h3>
-                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog1)">Read more..</button> -->
-
-    <!-- Blog Read More 1 -->
-    <!-- <div class="blog-page-1 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
-                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
-                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] lg:max-w-[85%]">
-                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
-                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Pertama</h2>
-                      <p class="pt-3">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur distinctio sed accusantium, nulla, animi quam ad quis placeat nesciunt ex delectus, debitis recusandae expedita ipsum nostrum quasi eveniet fugit
-                        corporis est sint nobis incidunt aspernatur. Harum quas numquam placeat sed cum distinctio quisquam in, nemo laboriosam, dolores totam itaque nulla ipsam voluptatem, eveniet velit quaerat eum aliquid quis molestias
-                        explicabo optio ipsa. Rem ratione ipsum temporibus modi laborum, eius ipsa nam vero unde iusto corporis distinctio rerum, placeat numquam nisi eos omnis debitis quidem. Laudantium facilis tempore culpa dignissimos
-                        explicabo placeat sed neque est quaerat recusandae nemo numquam, molestias ipsa exercitationem, ducimus, magni velit at voluptate vel nostrum assumenda aut! Impedit quas cumque, voluptatum laudantium voluptatibus
-                        ducimus at! Ipsum ea consectetur aspernatur praesentium esse doloribus nesciunt ratione tempore ducimus delectus voluptate dolor aliquam tenetur natus perspiciatis fuga earum, quis cum sed sapiente aut dignissimos
-                        minima? Deserunt esse sunt provident amet voluptatum sequi dicta asperiores consectetur rem cumque sint velit possimus similique repellat ducimus ullam atque nobis porro eveniet molestiae, quo quaerat totam! Repellat
-                        ea, neque voluptas distinctio maiores, excepturi animi eum alias accusantium inventore praesentium culpa! Provident at molestias repellat ea, odit repudiandae quasi eveniet totam, sapiente placeat facilis molestiae?
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-slate-300 text-slate-500 hover:bg-slate-800 hover:text-white text-2xl cursor-pointer transition-all duration-300 ease-in-out sm:-translate-x-1 lg:left-auto lg:right-[70px] lg:rounded-full xl:right-36"
-                    onclick="pageCloseBtn(blog1)"
-                  >
-                    X
-                  </div>
-                </div> -->
-    <!-- END Blog Read More 1 -->
-    <!-- </div>
-            </div>
-          </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <img src="./public/img/cafe1.png" alt="" />
-              <div class="py-6 px-7">
-                <h3 class="card-title">Judul kedua</h3>
-                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog2)">Read more..</button> -->
-
-    <!-- Blog Read More 2 -->
-    <!-- <div class="blog-page-2 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
-                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
-                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
-                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
-                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Kedua</h2>
-                      <p class="pt-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reiciendis blanditiis optio distinctio? Fuga, maxime blanditiis necessitatibus culpa laborum quidem at tempore voluptates a quam beatae neque vero autem
-                        alias modi minus voluptate pariatur. Corrupti est mollitia quisquam atque quod. Beatae laudantium corporis magni architecto, commodi nemo deserunt quidem ut vero ratione provident aliquid sequi officia incidunt enim
-                        voluptatum veniam, aspernatur alias. Incidunt blanditiis veniam officiis unde praesentium labore voluptas atque distinctio nesciunt inventore quaerat temporibus quae dolorem quia, exercitationem architecto sit
-                        doloribus numquam, quod minima! Temporibus fuga accusantium omnis eum reiciendis, suscipit sequi architecto sed inventore sit, doloremque optio.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-primaryIconColor text-white text-2xl cursor-pointer hover:opacity-80 transition-all duration-300 sm:-translate-x-1 xl:-translate-x-0"
-                    onclick="pageCloseBtn(blog2)"
-                  >
-                    X
-                  </div>
-                </div> -->
-    <!-- END Blog Read More 2 -->
-    <!-- </div>
-            </div>
-          </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="mb-8 bg-white dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black border shadow-sm rounded-xl overflow-hidden">
-              <img src="./public/img/cafe1.png" alt="" />
-              <div class="py-6 px-7">
-                <h3 class="card-title">Judul Ketiga</h3>
-                <p class="text-base text-secondary dark:text-darkSecondary pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti quos quas sit cumque voluptatem nemo ullam et laboriosam consequuntur?</p>
-                <button class="card-button" onclick="pageReadBtn(blog3)">Read more..</button> -->
-
-    <!-- Blog Read More 3 -->
-    <!-- <div class="blog-page-3 fixed hidden items-center z-[1000] w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400/80 backdrop-blur-md">
-                  <div class="mx-auto w-[80%] h-[90%] rounded-3xl bg-slate-100 overflow-auto sm:w-[70%] md:w-[70%] lg:w-[60%] lg:rounded-2xl xl:w-[50%]">
-                    <div class="flex flex-wrap justify-center mx-auto py-10 px-10 w-full sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
-                      <img src="./public/img/cafe1.png" alt="" class="md:max-h-[400px] rounded-xl" />
-                      <h2 class="w-full text-xl pt-10 font-medium text-primaryIconColor">Judul Ketiga</h2>
-                      <p class="pt-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reiciendis blanditiis optio distinctio? Fuga, maxime blanditiis necessitatibus culpa laborum quidem at tempore voluptates a quam beatae neque vero autem
-                        alias modi minus voluptate pariatur. Corrupti est mollitia quisquam atque quod. Beatae laudantium corporis magni architecto, commodi nemo deserunt quidem ut vero ratione provident aliquid sequi officia incidunt enim
-                        voluptatum veniam, aspernatur alias. Incidunt blanditiis veniam officiis unde praesentium labore voluptas atque distinctio nesciunt inventore quaerat temporibus quae dolorem quia, exercitationem architecto sit
-                        doloribus numquam, quod minima! Temporibus fuga accusantium omnis eum reiciendis, suscipit sequi architecto sed inventore sit, doloremque optio.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="absolute flex left-0 top-1/2 -translate-y-7 z-[1001] w-12 h-12 justify-center items-center rounded-r-full bg-primaryIconColor text-white text-2xl cursor-pointer hover:opacity-80 transition-all duration-300 sm:-translate-x-1 xl:-translate-x-0"
-                    onclick="pageCloseBtn(blog3)"
-                  >
-                    X
-                  </div>
-                </div> -->
-    <!-- END Blog Read More 3 -->
-    <!-- </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- END Blog -->
 
     <!-- Contact -->
     <section id="contact" class="py-36">

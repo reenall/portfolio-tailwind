@@ -110,7 +110,7 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 }
 
 .project-img {
-  @apply relative flex items-center justify-center h-[250px] sm:h-[265px] px-1 py-2 dark:from-slate-100 dark:to-slate-100;
+  @apply relative flex items-center justify-center h-[250px] sm:h-[265px] px-1 py-2 dark:from-slate-800 dark:to-slate-800;
 }
 
 .project-img .horizontal-img {
