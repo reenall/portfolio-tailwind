@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 body > section:nth-child(even) {
-  @apply bg-bgPrimary dark:bg-bgDarkPrimary;
+  @apply bg-bgPrimary dark:bg-bgDarkPrimary transition-all duration-500;
 }
 body > section:nth-child(odd) {
-  @apply bg-bgSecondary dark:bg-bgDarkSecondary;
+  @apply bg-bgSecondary dark:bg-bgDarkSecondary transition-all duration-500;
 }
 
 body::-webkit-scrollbar {
@@ -35,27 +35,32 @@ body::-webkit-scrollbar-thumb {
 }
 
 .second-title {
-  @apply text-3xl font-semibold text-primaryIconColor mt-3 mb-4 lg:text-[2rem]
+  @apply text-3xl font-light text-primaryIconColor mt-3 mb-4 lg:text-[2rem]
   dark:text-darkPrimaryIconColor;
 }
 
 /* button */
 .btn {
   @apply font-medium text-white bg-primaryIconColor
-   hover:bg-[#92bba6] hover:text-slate-50 transition-all duration-300 ease-in-out
+   hover:bg-[#92bba6] hover:text-slate-50 transition-all duration-500 ease-in-out
    dark:text-black dark:bg-slate-300 dark:hover:bg-slate-600;
 }
 
 /* SVG icons */
 #skills svg,
 #contact svg {
-  @apply w-[26px] mx-auto fill-primaryIconColor dark:fill-darkPrimaryIconColor;
+  @apply w-[22px] mx-auto fill-primaryIconColor dark:fill-darkPrimaryIconColor;
 }
 
 /* Cards */
 .card-title {
-  @apply pt-3 pb-5 text-lg text-primaryIconColor font-medium
-  dark:text-darkPrimaryIconColor;
+  @apply mt-3 mb-5 
+  dark:text-darkPrimaryIconColor
+}
+
+.card-sub-title {
+  @apply pt-5 pb-3 
+  dark:text-darkPrimary
 }
 
 .card-button {
@@ -71,7 +76,7 @@ body::-webkit-scrollbar-thumb {
   @apply bg-slate-300;
 }
 .dark-toggle-animate > .circle-toggle {
-  @apply translate-x-6 bg-primary;
+  @apply translate-x-5 bg-primary;
 }
 
 /* ----- Nav-fixed ----- */
@@ -82,19 +87,19 @@ body::-webkit-scrollbar-thumb {
 
 /* ----- Nav list ----- */
 .nav-list-item {
-  @apply block mx-6 text-primary 
+  @apply block mx-6 text-primary text-sm
   transition-all duration-500 group-hover:tracking-widest group-hover:underline group-hover:underline-offset-[15px] group-hover:text-primaryIconColor
 dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 }
 
 /* ----- Hamburger ----- */
 .hamburger-line {
-  @apply block w-[30px] h-[2px] my-2 rounded-full bg-primary
+  @apply block w-[25px] h-[1px] my-[6px] rounded-full bg-primary
   dark:bg-darkSecondary;
 }
 /* transisi dan origin (sumbu) ga bisa langsung di sini, transisi outnya jadi berantakan karna class .hamburger-activenya langsung hilang (penambahan classnya via toggle JS) */
 .hamburger-active > span:nth-child(1) {
-  @apply -rotate-45;
+  @apply -rotate-45 mb-[9px];
 }
 .hamburger-active > span:nth-child(2) {
   @apply scale-0;
@@ -103,30 +108,43 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
   @apply rotate-45;
 }
 
+/* ----- Skills ----- */
+.skill-container {
+  @apply w-full p-4 max-w-[450px] xl:w-1/3;
+}
+
+.skill-card {
+  @apply w-full py-14 px-10 text-center rounded-xl shadow-sm bg-bgPrimary dark:bg-bgDarkPrimary dark:shadow-black transition-all duration-500;
+}
+
 /* ----- Project ----- */
 .project-card-wrapper {
-  @apply mb-8 border border-indigo-50 bg-white text-secondary shadow-lg rounded-xl overflow-hidden
+  @apply mb-8 border border-indigo-50 bg-white text-secondary shadow-lg rounded-xl overflow-hidden transition-all duration-500
   dark:text-darkSecondary dark:bg-bgDarkSecondary dark:shadow-md dark:shadow-black dark:border-black;
 }
 
 .project-img {
-  @apply relative flex items-center justify-center h-[250px] sm:h-[265px] px-1 py-2 dark:from-slate-800 dark:to-slate-800;
+  @apply relative flex items-center justify-center h-[290px] px-1 py-2 transition-all duration-500 
+  bg-slate-100 dark:bg-slate-800
+  md:h-[250px]
+  lg:h-[290px]
 }
 
 .project-img .horizontal-img {
-  @apply absolute left-7 z-10 w-[70%] h-[80%] sm:h-[80%] shadow-portfolioImg rounded-xl;
+  @apply absolute left-7 z-10 max-w-[80%] max-h-[80%] shadow-portfolioImg rounded-xl object-cover
+  sm:max-w-[70%] sm:max-h-[80%]
+  xl:max-w-[75%];
 }
 
 .project-img .vertical-img {
-  @apply absolute w-[40%] h-full top-0 right-0;
+  @apply absolute w-[45%] h-full top-0 right-0 object-cover object-top;
 }
 
 .view-images-btn {
-  @apply absolute z-20 hidden top-0 left-0 right-0 bottom-0 items-center justify-center cursor-pointer bg-black/50 backdrop-blur-sm font-light;
-}
-
-.project-img:hover > .view-images-btn {
-  @apply flex;
+  @apply absolute z-20 opacity-0 w-full h-full flex items-center justify-center cursor-pointer transition-all duration-300 
+  bg-white/80 backdrop-blur-sm font-light 
+  hover:opacity-100
+  dark:bg-black/70 dark:text-darkPrimary
 }
 
 /* view images */
@@ -151,7 +169,8 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 /* end view images */
 
 .project-detail {
-  @apply mt-6 mb-9 px-7 h-[275px] overflow-auto;
+  @apply mt-6 mb-7 px-7 h-[275px] overflow-auto text-sm
+  sm:h-[250px] 
 }
 
 .project-detail::-webkit-scrollbar {
@@ -168,11 +187,22 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 }
 
 .project-detail > ul > li {
-  @apply list-disc list-outside text-base text-secondary dark:text-darkSecondary ml-7 pl-2;
+  @apply list-disc list-outside marker:text-primaryIconColor text-secondary dark:text-darkSecondary ml-7 pl-2;
 }
 
 .project-detail > ul > li > span {
   @apply font-medium;
+}
+
+/* ----- Swiper ----- */
+.swiper-slide {
+  @apply px-4 w-full 
+  lg:w-1/2 
+  xl:w-1/3
+}
+
+.project-card-wrapper {
+  @apply max-w-[350px] mx-auto
 }
 
 /* ----- Education ----- */
@@ -185,7 +215,13 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 }
 
 .dot-line {
-  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full dark:before:bg-darkPrimary;
+  @apply before:content-[''] before:absolute before:-ml-[37px] before:mt-[5px] before:w-4 before:h-4 before:bg-[#f1f1f1] before:rounded-full dark:before:bg-darkPrimary transition-all duration-500;
+}
+
+/* ----- Contact ----- */
+.contact-input {
+  @apply w-full p-3 bg-white drop-shadow-mdCustom dark:drop-shadow-none text-secondary dark:text-darkSecondary rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-200  transition-all duration-500
+  dark:border-black dark:bg-slate-800 dark:focus:ring-1 dark:focus:ring-slate-700;
 }
 
 /* ----- Footer ----- */
@@ -200,10 +236,10 @@ dark:text-darkSecondary dark:group-hover:text-darkPrimaryIconColor;
 footer img {
   @apply inline-block max-w-[40px] pr-2 grayscale
   sm:max-w-[65px] sm:pl-5
-  lg:pl-6 lg:max-w-[75px];
+  lg:pl-6 lg:max-w-[70px];
 }
 
 footer .text-img {
-  @apply font-normal text-base text-secondary dark:text-darkPrimary 
-  lg:text-[17px];
+  @apply text-secondary dark:text-darkPrimary 
+  lg:text-[16px];
 }

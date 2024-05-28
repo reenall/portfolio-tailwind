@@ -50,10 +50,6 @@ if (localStorage.theme === 'dark'){
 
 
 // ----- Page read/view button -----
-const blog1 = document.querySelector('.blog-page-1');
-const blog2 = document.querySelector('.blog-page-2');
-const blog3 = document.querySelector('.blog-page-3');
-
 const projectLaravel = document.querySelector('.project-page-laravel');
 
 function pageReadBtn (pageNumber) {
@@ -85,5 +81,60 @@ thumbnailList.addEventListener('click', (e) => {
          thumbnail.classList.remove('thumbnail-active');                                    // paksa semua .thumbnail yang memiliki .active, menjadi .thumbnail aja (reset)         
       });
       e.target.classList.add('thumbnail-active');
+   }
+})
+
+
+// ----- Swiper -----
+const swiper = new Swiper(".projectList", {
+   slidesPerView: 3,
+   spaceBetween: 30,
+   loop: true,
+   pagination: {
+     el: ".swiper-pagination",
+     clickable: true,
+   },
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+   breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+   },
+});
+
+const swiperNav = document.querySelectorAll('.swiper-navBtn')
+const swiperPagination = document.querySelector('.swiper-pagination-bullet')
+
+(() => {
+   if(html.classList.contains('dark')){
+      swiperNav.forEach((nav) => 
+         nav.style.color = '#cbd5e1'
+      )
+      swiperPagination.style.backgroundColor = '#cbd5e1'
+   } else {
+      swiperNav.forEach((nav) => 
+         nav.style.color = '#a9c3b6'
+      )
+      swiperPagination.style.backgroundColor = '#a9c3b6'
    }
 })

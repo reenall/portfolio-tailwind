@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         primaryIconColor: "#a9c3b6",
+        secondaryIconColor: "#92bba6",
         primary: "#475569",
         secondary: "#656d72",
         // background
