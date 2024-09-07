@@ -738,6 +738,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -933,6 +937,14 @@ video {
   cursor: pointer;
 }
 
+.resize-none {
+  resize: none;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -951,6 +963,10 @@ video {
 
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-16 {
+  gap: 4rem;
 }
 
 .gap-5 {
@@ -1107,10 +1123,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
 .pb-14 {
   padding-bottom: 3.5rem;
 }
@@ -1153,6 +1165,10 @@ video {
 
 .pt-7 {
   padding-top: 1.75rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1226,6 +1242,11 @@ video {
   letter-spacing: 0.05em;
 }
 
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
@@ -1233,7 +1254,7 @@ video {
 
 .text-primaryIconColor {
   --tw-text-opacity: 1;
-  color: rgb(169 195 182 / var(--tw-text-opacity));
+  color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 
 .text-secondary {
@@ -1416,7 +1437,7 @@ body::-webkit-scrollbar-thumb:hover {
   line-height: 2.25rem;
   font-weight: 300;
   --tw-text-opacity: 1;
-  color: rgb(169 195 182 / var(--tw-text-opacity));
+  color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 
 :is(.dark .second-title) {
@@ -1434,7 +1455,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .btn {
   --tw-bg-opacity: 1;
-  background-color: rgb(169 195 182 / var(--tw-bg-opacity));
+  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1445,7 +1466,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .btn:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(146 187 166 / var(--tw-bg-opacity));
+  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
 }
@@ -1469,7 +1490,7 @@ body::-webkit-scrollbar-thumb:hover {
   margin-left: auto;
   margin-right: auto;
   width: 22px;
-  fill: #a9c3b6;
+  fill: #0f766e;
 }
 
 :is(.dark #skills svg),:is(.dark 
@@ -1598,7 +1619,7 @@ body::-webkit-scrollbar-thumb:hover {
 .group:hover .nav-list-item {
   letter-spacing: 0.1em;
   --tw-text-opacity: 1;
-  color: rgb(169 195 182 / var(--tw-text-opacity));
+  color: rgb(15 118 110 / var(--tw-text-opacity));
   text-decoration-line: underline;
   text-underline-offset: 15px;
 }
@@ -1665,6 +1686,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .skill-card {
+  height: 300px;
   width: 100%;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
@@ -1687,6 +1709,12 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
   --tw-shadow-color: #000;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+@media (min-width: 640px) {
+  .skill-card {
+    height: 320px;
+  }
 }
 
 /* ----- Project ----- */
@@ -1780,7 +1808,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 @media (min-width: 1280px) {
   .project-img .horizontal-img {
-    max-width: 75%;
+    width: 75%;
   }
 }
 
@@ -1888,7 +1916,7 @@ body::-webkit-scrollbar-thumb:hover {
 .project-detail::-webkit-scrollbar-thumb {
   margin-top: 13rem;
   border-radius: 9999px;
-  background-color: rgb(169 195 182 / 0.6);
+  background-color: rgb(15 118 110 / 0.6);
 }
 
 .project-detail::-webkit-scrollbar-thumb:hover {
@@ -1928,11 +1956,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .project-detail > ul > li *::marker {
-  color: rgb(169 195 182 );
+  color: rgb(15 118 110 );
 }
 
 .project-detail > ul > li::marker {
-  color: rgb(169 195 182 );
+  color: rgb(15 118 110 );
 }
 
 :is(.dark .project-detail > ul > li) {
@@ -1940,8 +1968,12 @@ body::-webkit-scrollbar-thumb:hover {
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
-.project-detail > ul > li > span {
-  font-weight: 500;
+:is(.dark .project-detail > ul > li *)::marker {
+  color: rgb(148 163 184 );
+}
+
+:is(.dark .project-detail > ul > li)::marker {
+  color: rgb(148 163 184 );
 }
 
 /* ----- Swiper ----- */
@@ -2153,7 +2185,7 @@ footer .text-img {
 .before\:bg-primaryIconColor::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(169 195 182 / var(--tw-bg-opacity));
+  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
 }
 
 .hover\:cursor-pointer:hover {
@@ -2165,14 +2197,19 @@ footer .text-img {
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
-.hover\:text-\[\#92bba6\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(146 187 166 / var(--tw-text-opacity));
-}
-
 .hover\:text-blue-400:hover {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
+.hover\:text-secondaryIconColor:hover {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-primaryIconColor {
+  --tw-text-opacity: 1;
+  color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-white {

@@ -121,20 +121,3 @@ const swiper = new Swiper(".projectList", {
       },
    },
 });
-
-const swiperNav = document.querySelectorAll('.swiper-navBtn')
-const swiperPagination = document.querySelector('.swiper-pagination-bullet')
-
-(() => {
-   if(html.classList.contains('dark')){
-      swiperNav.forEach((nav) => 
-         nav.style.color = '#cbd5e1'
-      )
-      swiperPagination.style.backgroundColor = '#cbd5e1'
-   } else {
-      swiperNav.forEach((nav) => 
-         nav.style.color = '#a9c3b6'
-      )
-      swiperPagination.style.backgroundColor = '#a9c3b6'
-   }
-})

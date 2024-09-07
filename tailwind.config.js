@@ -14,8 +14,10 @@ module.exports = {
         roboto: ["Roboto", "sans-serif"],
       },
       colors: {
-        primaryIconColor: "#a9c3b6",
-        secondaryIconColor: "#92bba6",
+        // primaryIconColor: "#a9c3b6",
+        // secondaryIconColor: "#92bba6",
+        primaryIconColor: "#0f766e",
+        secondaryIconColor: "#0d9488",
         primary: "#475569",
         secondary: "#656d72",
         // background
