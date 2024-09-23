@@ -43,7 +43,7 @@
     <!-- END Swiper -->
 
     <script>
-      // biar pas direfresh, status dark modenya tetap sesuai pilihan dan ga kereset (read -> dokumentasi dark mode)
+      // menjaga status dark mode jika halaman direfresh (read -> dokumentasi dark mode)
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
       } else {
@@ -189,9 +189,9 @@
             <h3 class="text-base text-secondary dark:text-darkSecondary md:text-lg xl:text-xl" style="word-spacing: 5px">Hello, I'm</h3>
             <h1 class="text-primaryIconColor dark:text-darkPrimary text-4xl font-bold my-1 xl:text-5xl">Muhammad Renaldi</h1>
 
-            <p class="mb-9 text-secondary dark:text-darkSecondary leading-relaxed lg:text-lg">A graduate of Informatics Engineering from Darma Persada University</p>
+            <p class="mb-9 text-secondary dark:text-darkSecondary leading-relaxed lg:text-lg">Bachelor of Informatics Engineering from Darma Persada University</p>
 
-            <h3 class="mb-8 text-secondary dark:text-darkSecondary">I'm into Front end & <span class="">Back end web programming</span></h3>
+            <h3 class="mb-8 text-secondary dark:text-darkSecondary">Front-end & Back-end web developer</h3>
             
             <a href="#contact" class="btn px-16 lg:px-5 py-2 rounded-full">Contact me</a>
           </div>
@@ -253,12 +253,13 @@
                   </p>
                   <ul class="mt-2 flex justify-center gap-16 w-full text-sm text-left text-secondary dark:text-darkSecondary list-disc">
                     <div>
-                      <li>React.JS</li>
-                      <li>Next.JS</li>
+                      <li>TypeScript</li> 
+                      <li>React.js</li> 
+                      <li>Next.js</li>
                     </div>
                     <div>
-                      <li>Node.JS</li>
-                      <li>TypeScript</li>
+                      <li>Node.js</li>
+                      <li>Express.js</li>
                     </div>
                   </ul>
                 </div>
@@ -570,10 +571,11 @@
               <ul class="w-1/2">
                 <li><img src="./public/img/education/js3.png" alt="js logo" />JavaScript</li>
                 <li><img src="./public/img/education/ts1.png" alt="js logo" />TypeScript</li>
-                <li><img src="./public/img/education/react1.png" alt="react logo" />React JS</li>
-                <li><img src="./public/img/education/nextjs1.png" alt="react logo" />Next JS</li>
-                <li><img src="./public/img/education/nodejs1.png" alt="nodejs logo" />Node JS</li>
-                <li><img src="./public/img/education/mysql1.png" alt="mysql logo" />MySQL</li>
+                <li><img src="./public/img/education/react1.png" alt="react logo" />React.js</li>
+                <li><img src="./public/img/education/nextjs1.png" alt="react logo" />Next.js</li>
+                <li><img src="./public/img/education/nodejs1.png" alt="node.js logo" />Node.js</li>
+                <li><img src="./public/img/education/expressjs.png" alt="express.js logo" />Express.js</li>
+                <li><img src="./public/img/education/git1.png" alt="git1 logo" />Git</li>
               </ul>
 
               <ul class="w-1/2">
@@ -582,7 +584,8 @@
                 <li><img src="./public/img/education/css1.png" alt="css logo" />CSS</li>
                 <li><img src="./public/img/education/tailwind1.png" alt="tailwind logo" />Tailwind CSS</li>
                 <li><img src="./public/img/education/bootstrap1.png" alt="bootstrap logo" />Bootstrap</li>
-                <li><img src="./public/img/education/git1.png" alt="git1 logo" />Git</li>
+                <li><img src="./public/img/education/mysql1.png" alt="mysql logo" />MySQL</li>
+                <li><img src="./public/img/education/mongoDB.png" alt="mongoDB logo" />MongoDB</li>
               </ul>
             </div>
           </div>

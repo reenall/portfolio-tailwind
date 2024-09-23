@@ -1686,7 +1686,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .skill-card {
-  height: 300px;
+  height: 320px;
   width: 100%;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
@@ -1709,12 +1709,6 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
   --tw-shadow-color: #000;
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-@media (min-width: 640px) {
-  .skill-card {
-    height: 320px;
-  }
 }
 
 /* ----- Project ----- */
