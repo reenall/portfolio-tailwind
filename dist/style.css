@@ -1027,6 +1027,11 @@ video {
   border-color: rgb(241 245 249 / var(--tw-border-opacity));
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .bg-\[\#f1f1f1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -1503,11 +1508,22 @@ body::-webkit-scrollbar-thumb:hover {
 .card-title {
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
+  display: block;
+}
+
+.card-title:hover {
+  --tw-text-opacity: 1;
+  color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 
 :is(.dark .card-title) {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+
+:is(.dark .card-title:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .card-sub-title {
@@ -1714,7 +1730,10 @@ body::-webkit-scrollbar-thumb:hover {
 /* ----- Project ----- */
 
 .project-card-wrapper {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
+  max-width: 350px;
   overflow: hidden;
   border-radius: 0.75rem;
   border-width: 1px;
@@ -1990,11 +2009,9 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
-.project-card-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 350px;
-}
+/* .project-card-wrapper {
+  @apply max-w-[350px] mx-auto;
+} */
 
 /* ----- Education ----- */
 
@@ -2269,6 +2286,11 @@ footer .text-img {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+:is(.dark .group:hover .dark\:group-hover\:text-darkPrimaryIconColor) {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
