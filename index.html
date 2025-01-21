@@ -43,7 +43,6 @@
     <!-- END Swiper -->
 
     <script>
-      // menjaga status dark mode jika halaman direfresh (read -> dokumentasi dark mode)
       if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
       } else {
@@ -322,7 +321,7 @@
         <div class="w-full px-4">
           <div class="text-start mb-20">
             <h4 class="first-title-stripe">Portfolio</h4>
-            <h2 class="second-title">Latest Project</h2>
+            <h2 class="second-title">Project List</h2>
           </div>
         </div>
 
@@ -341,7 +340,7 @@
 
                   <div class="project-detail">
                     <a href="https://reenall-next-store.vercel.app/" class="card-title" target="_blank">E-Commerce</a>
-                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">Next JS | Type Script | Firebase | Midtrans | Sass</h4>
+                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">Next.js | Type Script | Firebase | Midtrans | JWT | Sass</h4>
                     <ul>
                       <h4 class="card-sub-title">Visitor Account</h4>
                       <li>E-mail: visitor@next-store.com</li>
@@ -382,7 +381,7 @@
 
                   <div class="project-detail">
                     <a href="https://reenall.github.io/lorem-store/" class="card-title" target="_blank">E-Commerce UI</a>
-                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</h4>
+                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">React.js | Tailwind CSS</h4>
                     <h4 class="card-sub-title">About</h4>
                     <h4>Program ini dibuat menggunakan data product dan data users dari layanan <a href="https://fakestoreapi.com/" target="_blank" class="hover:text-blue-400">Fake Store API.</a></h4>
 
@@ -400,6 +399,33 @@
               <div class="swiper-slide">
                 <div class="project-card-wrapper">
                   <div class="project-img">
+                    <img src="./public/img/project/mern-blog.png" alt="lorem e-commerce" />
+                    <a href="https://mern-blog-seven-sage.vercel.app/" target="blank" class="view-images-btn flex m-auto">
+                      <p>Visit Website</p>
+                    </a>
+                  </div>
+
+                  <div class="project-detail">
+                    <a href="https://reenall-next-store.vercel.app/" class="card-title" target="_blank">MERN Blog</a>
+                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">MongoDB | Express.js | React.js | Node.js | TypeScript | Tailwind CSS | Redux | React-Router | JWT</h4>
+                    <ul>
+                      <h4 class="card-sub-title">Visitor Account</h4>
+                      <li>E-mail: visitor@mern.com</li>
+                      <li>Password: visitor</li>
+                      <li class="mt-3">
+                        Hak akses tambahan:
+                        <span class="block">Dapat mengakses UI Create/Edit/Delete blog post, namun tidak dapat melakukan perubahan data.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- END Project 3 -->
+
+              <!-- Project 3 -->
+              <div class="swiper-slide">
+                <div class="project-card-wrapper">
+                  <div class="project-img">
                     <img src="./public/img/project/tic-tac-toe2.png" alt="Tic Tac Toe Game" class="horizontal-img brightness-[105%] dark:brightness-100" />
                     <img src="./public/img/project/tic-tac-toe-v-1.png" alt="Tic Tac Toe Game" class="vertical-img brightness-[105%] dark:brightness-100" />
                     <a href="https://reenall.github.io/tic-tac-toe/" target="blank" class="view-images-btn">
@@ -408,14 +434,14 @@
                   </div>
                   <div class="project-detail text-pretty">
                     <a href="https://reenall.github.io/tic-tac-toe/" class="card-title" target="_blank">Game Tic Tac Toe</a>
-                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">React JS | Tailwind CSS</h4>
+                    <h4 class="pb-3 text-pretty" style="word-spacing: 5px">React.js | Tailwind CSS</h4>
 
                     <h4 class="card-sub-title">About</h4>
                     <h4 class="mb-5">
                       Algoritma permainan ini adalah, jika di antara player X dan O ada yang telah memenuhi 3 kolom dengan sejajar secara vertical, horizontal, ataupun diagonal tanpa terputus, maka ia dinyatakan sebagai pemenang dan
                       permainan dihentikan.
                     </h4>
-                    <h4>Program ini juga memiliki fitur Time Travel yang dibuat menggunakan state pada React JS untuk dapat mengembalikan permainan ke keadaan sebelumnya untuk mengulang langkah permainan.</h4>
+                    <h4>Program ini juga memiliki fitur Time Travel yang dibuat menggunakan state pada React.js untuk dapat mengembalikan permainan ke keadaan sebelumnya untuk mengulang langkah permainan.</h4>
                   </div>
                 </div>
               </div>
